@@ -1,3 +1,5 @@
+@import "varibles";
+
 @font-face {
     font-family: persianFont;
     src: url(BTraffic.ttf);
@@ -52,7 +54,7 @@ body {
             font-weight: 600;
 
             .settingOption {
-                border-bottom: 1px solid #B3B3B3;
+                border-bottom: $borderBottom;
                 padding: 0px;
 
                 div:last-of-type {

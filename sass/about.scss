@@ -1,0 +1,25 @@
+@import "varibles";
+
+header {
+    border-bottom: $borderBottom;
+}
+
+main {
+    .imgDiv {
+        img {
+            margin: 0 auto;
+        }
+    }
+
+    .about {
+        h3 {
+            color: $titleColor;
+            font-weight: $fontWeight;
+        }
+
+        p {
+            color: $textColor;
+            font-weight: $textFontWeight;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+header {
+  border-bottom: 1px solid #B3B3B3;
+}
+
+main .imgDiv img {
+  margin: 0 auto;
+}
+main .about h3 {
+  color: #01579B;
+  font-weight: 700;
+}
+main .about p {
+  color: #232323;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=about.css.map */
