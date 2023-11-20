@@ -1,3 +1,7 @@
+let goToPageSetting = document.querySelector('#goToPageSetting')
+
+goToPageSetting.addEventListener('click', switchPageToSetting)
+
 $('.owl-carousel').owlCarousel({
     loop: true,
     margin: 10,
@@ -26,4 +30,8 @@ function nextSlide() {
     setInterval(() => {
         owlPrev.click()
     }, 4000);
+}
+
+function switchPageToSetting() {
+    window.location.href = "setting page/setting.html"
 }

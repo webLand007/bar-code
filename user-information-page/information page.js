@@ -13,6 +13,8 @@ let nationalCode = document.querySelector('#nationalCode')
 let trafficCode = document.querySelector('#trafficCode')
 // btn signOut
 let signOut = document.querySelector('#signOut')
+// 
+let backToPageSetting = document.querySelector('#backToPageSetting')
 
 
 
@@ -25,7 +27,8 @@ formInformation.addEventListener('submit', saveValueInformation)
 signOut.addEventListener('click', signOutInAccount)
 // show information in form 
 document.addEventListener('DOMContentLoaded', loadInformationAccount)
-
+// 
+backToPageSetting.addEventListener('click', switchPageToSetting)
 
 // Functions
 
@@ -172,4 +175,8 @@ function showAndHideInformationPerson(info) {
             trafficCode.value = ''
             break;
     }
+}
+
+function switchPageToSetting() {
+    window.location.href = "../setting page/setting.html"
 }
