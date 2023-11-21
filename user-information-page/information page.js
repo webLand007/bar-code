@@ -35,8 +35,18 @@ backToPageSetting.addEventListener('click', switchPageToSetting)
 
 // show information in form 
 function loadInformationAccount() {
-    // Calling the function to display user information
-    showAndHideInformationPerson(true)
+    // create new key in local storage with name (information)
+    let loadLS = loadOfLS()
+
+    // If there is no template for entering user information in the
+    // local storage key with the name (information), create a template
+    if (loadLS == null) {
+        // Creating a template in local storage to enter user information
+        signOutInAccount()
+    } else {
+        // Calling the function to display user information
+        showAndHideInformationPerson(true)
+    }
 }
 
 // Checking and calling the user information storage function
