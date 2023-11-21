@@ -35,12 +35,14 @@ backToPageSetting.addEventListener('click', switchPageToSetting)
 
 // show information in form 
 function loadInformationAccount() {
-    // create new key in local storage with name (information)
-    let loadLS = loadOfLS()
+    // get key (information) in local storage
+    let loadLS = JSON.parse(localStorage.getItem('information'))
 
     // If there is no template for entering user information in the
     // local storage key with the name (information), create a template
     if (loadLS == null) {
+        // create new key in local storage with name (information)
+        loadOfLS()
         // Creating a template in local storage to enter user information
         signOutInAccount()
     } else {
