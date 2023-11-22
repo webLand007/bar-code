@@ -1,6 +1,16 @@
 let goToPageSetting = document.querySelector('#goToPageSetting')
+let mapIcon = document.querySelector('#mapIcon')
 
+
+document.addEventListener('DOMContentLoaded', nextSlide)
+mapIcon.addEventListener('click', switchPageToMap)
 goToPageSetting.addEventListener('click', switchPageToSetting)
+
+// by click in mapIcon btn switch Page To Map
+function switchPageToMap() {
+    window.location.href = '../SearchJs/index.html'
+}
+
 
 $('.owl-carousel').owlCarousel({
     loop: true,
@@ -22,7 +32,6 @@ $('.owl-carousel').owlCarousel({
 // Select button (next slide)
 let owlPrev = document.querySelector('.owl-prev span')
 
-document.addEventListener('DOMContentLoaded', nextSlide)
 
 // Show the next slide
 function nextSlide() {
