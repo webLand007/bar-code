@@ -19,10 +19,45 @@ var myMap = new L.Map('map', {
     zoom: 14
 });
 
-//adding the marker to map
+//adding the marker to map => base marker
 let marker = L.marker([29.606446174640958, 52.53792787943611]).addTo(myMap);
 centerLat.value = " 29.606446174640958";
 centerLng.value = " 52.53792787943611";
+
+// location of Shiraz cargo terminal => show it with marker
+const LeafIcon = L.Icon.extend({
+    options: {
+        iconSize: [28, 65],
+        shadowSize: [50, 64],
+        iconAnchor: [12, 64],
+        shadowAnchor: [4, 62],
+        popupAnchor: [0, -50]
+    }
+});
+// choose icons
+var greenIcon = new LeafIcon({
+    iconUrl: 'icon/location-pin-svgrepo-com.svg',
+    // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
+})
+// location of icon01 + Popup
+L.marker([29.68218188708475, 52.53309502488736], {
+    icon: greenIcon
+}).addTo(myMap).bindPopup("پایانه حمل بار شیراز");
+// location of icon02 + Popup
+L.marker([29.545853949560765, 52.589737662746444], {
+    icon: greenIcon
+}).addTo(myMap).bindPopup(" فرودگاه بین المللی شهید دستغیب شیراز");
+// // location of icon03 + Popup
+L.marker([29.655353264688696, 52.48390338181354], {
+    icon: greenIcon
+}).addTo(myMap).bindPopup("پایانه حمل بار شیراز ");
+
+
+
+
+
+
+
 
 // get and show user location
 function whereAmI() {
