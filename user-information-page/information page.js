@@ -7,13 +7,11 @@ let formInformation = document.querySelector('#form-information')
 let fullName = document.querySelector('#fullName')
 // input phonNumber
 let phonNumber = document.querySelector('#phonNumber')
-// input nationalCode
-let nationalCode = document.querySelector('#nationalCode')
-// input trafficCode
-let trafficCode = document.querySelector('#trafficCode')
+// input email
+let email = document.querySelector('#email')
 // btn signOut
 let signOut = document.querySelector('#signOut')
-// 
+//
 let backToPageSetting = document.querySelector('#backToPageSetting')
 
 
@@ -25,15 +23,15 @@ let backToPageSetting = document.querySelector('#backToPageSetting')
 formInformation.addEventListener('submit', saveValueInformation)
 // sign out in form
 signOut.addEventListener('click', signOutInAccount)
-// show information in form 
+// show information in form
 document.addEventListener('DOMContentLoaded', loadInformationAccount)
-// 
+//
 backToPageSetting.addEventListener('click', switchPageToSetting)
 
 // Functions
 
 
-// show information in form 
+// show information in form
 function loadInformationAccount() {
     // get key (information) in local storage
     let loadLS = JSON.parse(localStorage.getItem('information'))
@@ -58,7 +56,7 @@ function saveValueInformation(event) {
 
     // Check the correctness of the entered information
     // Parameter (input information)
-    if (checkValidation(getValueValidation()) == true) {
+    if (checkValidation(getValueValidation()) == 3) {
         // If the information is correct (save the information)
         // Parameter (input information)
         saveInformationInLS(getValueValidation())
@@ -71,47 +69,43 @@ function getValueValidation() {
     return {
         fullName: fullName.value,
         phonNumber: phonNumber.value,
-        nationalCode: nationalCode.value,
-        trafficCode: trafficCode.value
+        email: email.value
     }
 }
 
 // If the number of carters entered in the form is correct, it will be returned (true).
 function checkValidation(UserInformation) {
-    let info = false
+    let info
+    let info1
+    let info2
+    let info3
+    let reg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
 
-    if (UserInformation.fullName.length < 7) {
+    if (UserInformation.fullName.length <= 7) {
         // Show error for input fullName
         errorMSG(fullName)
-        info = false
+        info1 = false
     } else {
-        info = true
+        info1 = true
     }
 
     if (UserInformation.phonNumber.length != 11 || UserInformation.phonNumber.length == 0) {
         // Show error for input phonNumber
         errorMSG(phonNumber)
-        info = false
+        info2 = false
     } else {
-        info = true
+        info2 = true
     }
 
-    if (UserInformation.nationalCode.length != 10 || UserInformation.nationalCode.length == 0) {
+    if (!reg.test(UserInformation.email)) {
         // Show error for input nationalCode
-        errorMSG(nationalCode)
-        info = false
+        errorMSG(email)
+        info3 = false
     } else {
-        info = true
+        info3 = true
     }
-
-    if (UserInformation.trafficCode.length < 8) {
-        // Show error for input trafficCode
-        errorMSG(trafficCode)
-        info = false
-    } else {
-        info = true
-    }
-
+    // sum returned from the inputs condition
+    info = info1 + info2 + info3
     return info
 }
 
@@ -154,10 +148,9 @@ function loadOfLS() {
 // 2 = Delete data from local storage
 function signOutInAccount() {
     let UserInformation = {
-        fullName: ' ',
-        phonNumber: ' ',
-        nationalCode: ' ',
-        trafficCode: ' '
+        fullName: null,
+        phonNumber: null,
+        email: null
     }
 
     // remove information from the local storage
@@ -177,14 +170,12 @@ function showAndHideInformationPerson(info) {
         case true:
             fullName.value = lsInfo.fullName
             phonNumber.value = lsInfo.phonNumber
-            nationalCode.value = lsInfo.nationalCode
-            trafficCode.value = lsInfo.trafficCode
+            email.value = lsInfo.email
             break;
         case false:
-            fullName.value = ''
-            phonNumber.value = ''
-            nationalCode.value = ''
-            trafficCode.value = ''
+            fullName.value = null
+            phonNumber.value = null
+            email.value = null
             break;
     }
 }
