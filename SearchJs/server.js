@@ -39,15 +39,15 @@ var greenIcon = new LeafIcon({
     iconUrl: 'icon/location-pin-svgrepo-com.svg',
     // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
-// location of icon01
+// location of icon01 + Popup
 L.marker([29.68218188708475, 52.53309502488736], {
     icon: greenIcon
 }).addTo(myMap).bindPopup("پایانه حمل بار شیراز");
-// location of icon02
+// location of icon02 + Popup
 L.marker([29.545853949560765, 52.589737662746444], {
     icon: greenIcon
 }).addTo(myMap).bindPopup(" فرودگاه بین المللی شهید دستغیب شیراز");
-// // location of icon03
+// // location of icon03 + Popup
 L.marker([29.655353264688696, 52.48390338181354], {
     icon: greenIcon
 }).addTo(myMap).bindPopup("پایانه حمل بار شیراز ");
