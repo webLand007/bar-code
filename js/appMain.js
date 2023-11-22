@@ -8,7 +8,7 @@ goToPageSetting.addEventListener('click', switchPageToSetting)
 
 // by click in mapIcon btn switch Page To Map
 function switchPageToMap() {
-    window.location.href = '../SearchJs/index.html'
+    window.location.href = 'SearchJs/index.html'
 }
 
 
