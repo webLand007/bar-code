@@ -56,7 +56,7 @@ function saveValueInformation(event) {
 
     // Check the correctness of the entered information
     // Parameter (input information)
-    if (checkValidation(getValueValidation()) == true) {
+    if (checkValidation(getValueValidation()) == 3) {
         // If the information is correct (save the information)
         // Parameter (input information)
         saveInformationInLS(getValueValidation())
@@ -75,32 +75,37 @@ function getValueValidation() {
 
 // If the number of carters entered in the form is correct, it will be returned (true).
 function checkValidation(UserInformation) {
-    let info = false
+    let info
+    let info1
+    let info2
+    let info3
+    let reg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
 
     if (UserInformation.fullName.length <= 7) {
         // Show error for input fullName
         errorMSG(fullName)
-        info = false
+        info1 = false
     } else {
-        info = true
+        info1 = true
     }
 
     if (UserInformation.phonNumber.length != 11 || UserInformation.phonNumber.length == 0) {
         // Show error for input phonNumber
         errorMSG(phonNumber)
-        info = false
+        info2 = false
     } else {
-        info = true
+        info2 = true
     }
 
-    if (UserInformation.email.length == 0) {
+    if (!reg.test(UserInformation.email)) {
         // Show error for input nationalCode
         errorMSG(email)
-        info = false
+        info3 = false
     } else {
-        info = true
+        info3 = true
     }
-
+    // sum returned from the inputs condition
+    info = info1 + info2 + info3
     return info
 }
 
