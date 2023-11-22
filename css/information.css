@@ -34,22 +34,19 @@ body main form {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 body main form img {
   margin: 3vh auto;
 }
-body main form label {
-  font-size: 2vh;
-  font-weight: bold;
-  padding-right: 1vh;
-  margin-top: 4vh;
-}
 body main form input {
-  width: 100%;
+  width: 95%;
   height: 4vh;
   border: none;
-  margin: 0.5vh 0;
+  border-radius: 1vh;
+  padding: 0 2vh 0;
+  font-size: 2vh;
+  margin: 5vh 0;
 }
 body main form button[type=submit] {
   margin: 4vh auto;

@@ -44,24 +44,22 @@ body {
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
 
             img {
                 margin: 3vh auto;
             }
 
-            label {
-                font-size: 2vh;
-                font-weight: bold;
-                padding-right: 1vh;
-                margin-top: 4vh;
-            }
-
             input {
-                width: 100%;
+                width: 95%;
                 height: 4vh;
+
                 border: none;
-                margin: 0.5vh 0;
+                border-radius: 1vh;
+
+                padding: 0 2vh 0;
+                font-size: 2vh;
+                margin: 5vh 0;
             }
 
             button[type=submit] {

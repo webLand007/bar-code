@@ -7,13 +7,11 @@ let formInformation = document.querySelector('#form-information')
 let fullName = document.querySelector('#fullName')
 // input phonNumber
 let phonNumber = document.querySelector('#phonNumber')
-// input nationalCode
-let nationalCode = document.querySelector('#nationalCode')
-// input trafficCode
-let trafficCode = document.querySelector('#trafficCode')
+// input email
+let email = document.querySelector('#email')
 // btn signOut
 let signOut = document.querySelector('#signOut')
-// 
+//
 let backToPageSetting = document.querySelector('#backToPageSetting')
 
 
@@ -25,15 +23,15 @@ let backToPageSetting = document.querySelector('#backToPageSetting')
 formInformation.addEventListener('submit', saveValueInformation)
 // sign out in form
 signOut.addEventListener('click', signOutInAccount)
-// show information in form 
+// show information in form
 document.addEventListener('DOMContentLoaded', loadInformationAccount)
-// 
+//
 backToPageSetting.addEventListener('click', switchPageToSetting)
 
 // Functions
 
 
-// show information in form 
+// show information in form
 function loadInformationAccount() {
     // get key (information) in local storage
     let loadLS = JSON.parse(localStorage.getItem('information'))
@@ -71,8 +69,7 @@ function getValueValidation() {
     return {
         fullName: fullName.value,
         phonNumber: phonNumber.value,
-        nationalCode: nationalCode.value,
-        trafficCode: trafficCode.value
+        email: email.value
     }
 }
 
@@ -80,7 +77,7 @@ function getValueValidation() {
 function checkValidation(UserInformation) {
     let info = false
 
-    if (UserInformation.fullName.length < 7) {
+    if (UserInformation.fullName.length <= 7) {
         // Show error for input fullName
         errorMSG(fullName)
         info = false
@@ -96,17 +93,9 @@ function checkValidation(UserInformation) {
         info = true
     }
 
-    if (UserInformation.nationalCode.length != 10 || UserInformation.nationalCode.length == 0) {
+    if (UserInformation.email.length == 0) {
         // Show error for input nationalCode
-        errorMSG(nationalCode)
-        info = false
-    } else {
-        info = true
-    }
-
-    if (UserInformation.trafficCode.length < 8) {
-        // Show error for input trafficCode
-        errorMSG(trafficCode)
+        errorMSG(email)
         info = false
     } else {
         info = true
@@ -154,10 +143,9 @@ function loadOfLS() {
 // 2 = Delete data from local storage
 function signOutInAccount() {
     let UserInformation = {
-        fullName: ' ',
-        phonNumber: ' ',
-        nationalCode: ' ',
-        trafficCode: ' '
+        fullName: null,
+        phonNumber: null,
+        email: null
     }
 
     // remove information from the local storage
@@ -177,14 +165,12 @@ function showAndHideInformationPerson(info) {
         case true:
             fullName.value = lsInfo.fullName
             phonNumber.value = lsInfo.phonNumber
-            nationalCode.value = lsInfo.nationalCode
-            trafficCode.value = lsInfo.trafficCode
+            email.value = lsInfo.email
             break;
         case false:
-            fullName.value = ''
-            phonNumber.value = ''
-            nationalCode.value = ''
-            trafficCode.value = ''
+            fullName.value = null
+            phonNumber.value = null
+            email.value = null
             break;
     }
 }
