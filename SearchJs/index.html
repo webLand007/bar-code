@@ -32,12 +32,13 @@
         <input style="width: 100%;" dir="rtl" type="text" placeholder="term" required id="term">
         <h4 style="margin-left: 50%;">نقطه مرکز</h4>
         <label>latitude</label>
-        <input  dir="ltr" type="text" placeholder="latitude" required id="center_lat">
+        <input dir="ltr" type="text" placeholder="latitude" required id="center_lat">
         <br>
         <label>longitude</label>
-        <input  dir="ltr" type="text" placeholder="longitude" required id="center_lng">
+        <input dir="ltr" type="text" placeholder="longitude" required id="center_lng">
         <br>
         <button id="search" style="margin-top: 10px;" onclick="search()">Search</button>
+        <button id="userLocation" onclick="whereAmI()">where am I ?</button>
         <!--Search_Result-->
         <p dir="rtl" id="resultCount"></p>
         <div id="resualt">

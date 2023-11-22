@@ -1,19 +1,52 @@
+// variables...
 var centerLat = document.getElementById("center_lat");
 var centerLng = document.getElementById("center_lng");
+const userBtn = document.querySelector("#userLocation")
+
+// events...
+
+
+
+// functions...
 
 //init the map
 var myMap = new L.Map('map', {
     key: 'web.a1d0cdd60e584c12841a7c226540a7f7',
     maptype: 'dreamy',
     poi: true,
-    traffic: false,
-    center: [35.699739, 51.338097],
+    traffic: true,
+    center: [29.606446174640958, 52.53792787943611],
     zoom: 14
 });
+
 //adding the marker to map
-var marker = L.marker([35.699739, 51.338097]).addTo(myMap);
-centerLat.value = "35.699739";
-centerLng.value = "51.338097";
+let marker = L.marker([29.606446174640958, 52.53792787943611]).addTo(myMap);
+centerLat.value = " 29.606446174640958";
+centerLng.value = " 52.53792787943611";
+
+// get and show user location
+function whereAmI() {
+    // if user Devise suports geo location
+    const successCallback = (position) => {
+        // set marker position
+        marker.setLatLng([position.coords.latitude, position.coords.longitude]);
+        // change value of location
+        centerLat.value = position.coords.latitude, position;
+        centerLng.value = position.coords.longitude;
+        // add Popun for marker position
+        marker.bindPopup(`lat : ${position.coords.latitude} - lng : ${position.coords.longitude}`).openPopup();
+        // change map position
+        myMap.flyTo([centerLat.value, centerLng.value], 12);
+    };
+    // if user Devise doesn't suports geo location
+    const errorCallback = (error) => {
+        alert(error.message)
+    };
+
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+}
+
 //on map binding
 myMap.on('click', addMarkerOnMap);
 
