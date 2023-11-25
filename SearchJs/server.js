@@ -1,11 +1,24 @@
 // variables...
 var centerLat = document.getElementById("center_lat");
 var centerLng = document.getElementById("center_lng");
-const userBtn = document.querySelector("#userLocation")
+// input search in map
+var term = document.querySelector("#term")
 
 // events...
 
+// click by input search in map
+term.onclick = ShowTheListOfOffers
 
+// show list offers by click input search 
+function ShowTheListOfOffers() {
+    if (term.value == 0) {
+        document.querySelector('#resualt').style.display = 'none'
+    } else {
+        document.querySelector('#resualt').style.display = 'inline-block'
+        // Search function call to display the marks on the map and zoom out
+        search()
+    }
+}
 
 // functions...
 
@@ -146,7 +159,7 @@ function search() {
             document.getElementById("resultCount").textContent = `تعداد نتایج : ${data.data.count}`
             //set center of map to marker location
             console.log(data.data);
-            myMap.flyTo([centerLat.value, centerLng.value], 12);
+            myMap.setZoom(13)
 
             //for every search resualt add marker
             var i;
@@ -166,6 +179,8 @@ function search() {
             document.getElementById("resultCount").textContent = `تعداد نتایج : 0`
             console.log(error.response);
         });
+    // Show the list of offers
+    document.querySelector('#resualt').style.display = 'inline-block'
 }
 
 /**
@@ -194,7 +209,8 @@ function makeDiveResualt(data, index) {
             // remove extra markers (greenn  markers)
             searchMarkers[i].remove(greenIcon);
         }
-
+        // Hide list of suggestions
+        document.querySelector('#resualt').style.display = 'none'
     }
     resultDiv.dir = "ltr";
     var resultAddress = document.createElement("pre");
@@ -202,7 +218,6 @@ function makeDiveResualt(data, index) {
     resultAddress.style = `border: solid ${generateRandomColor()};`;
     resultsDiv.appendChild(resultDiv);
     resultDiv.appendChild(resultAddress);
-
 }
 
 //random color generator :))
@@ -217,64 +232,64 @@ function generateRandomColor() {
 
 // Red area on the map
 var polygon = L.polygon([
-        [29.619883657385166, 52.52855003268645],
-        [29.605590904673548, 52.517085228188314],
-        [29.597124205302865, 52.53252071867724],
-        [29.60032598023533, 52.53657479058015],
-        [29.603644555714503, 52.538720272952276],
-        [29.603711672527506, 52.53878892734056],
-        [29.608799055570728, 52.542042512611324],
-        [29.610341637063463, 52.54018508862055],
-        [29.612179261924993, 52.54146171792539],
-        [29.613149971580423, 52.54051397630156],
-        [29.613790309119878, 52.54037237449773],
-        [29.614365863781373, 52.54071618808061],
-        [29.615975417561312, 52.542373547168246],
-        [29.61710137768525, 52.54321165813948],
-        [29.617429922790105, 52.5430078373141]
-    ], {
-        color: 'red',
-        fillColor: 'red',
-    }
+    [29.619883657385166, 52.52855003268645],
+    [29.605590904673548, 52.517085228188314],
+    [29.597124205302865, 52.53252071867724],
+    [29.60032598023533, 52.53657479058015],
+    [29.603644555714503, 52.538720272952276],
+    [29.603711672527506, 52.53878892734056],
+    [29.608799055570728, 52.542042512611324],
+    [29.610341637063463, 52.54018508862055],
+    [29.612179261924993, 52.54146171792539],
+    [29.613149971580423, 52.54051397630156],
+    [29.613790309119878, 52.54037237449773],
+    [29.614365863781373, 52.54071618808061],
+    [29.615975417561312, 52.542373547168246],
+    [29.61710137768525, 52.54321165813948],
+    [29.617429922790105, 52.5430078373141]
+], {
+    color: 'red',
+    fillColor: 'red',
+}
 
 ).addTo(myMap);
 
 
 // Green area on the map
 var polygon = L.polygon([
-        [29.611485196721464, 52.468101407336775],
-        [29.6050131178401, 52.49018382383847],
-        [29.60070958018711, 52.496921952379836],
-        [29.59896748390389, 52.500839210649474],
-        [29.596035590213763, 52.50992645695803],
-        [29.57321671597567, 52.50478342705975],
-        [29.575003419736863, 52.49925404865084],
-        [29.577005833643668, 52.49673879402647],
-        [29.579279895890338, 52.49422265099454],
-        [29.580793670190705, 52.49148056074872],
-        [29.587481734614883, 52.480093318954175],
-        [29.59013558764032, 52.47680451377478],
-        [29.59566150631803, 52.47388316507248],
-        [29.60311929207729, 52.471600578506596],
-        [29.604950996647112, 52.47021674237663],
-        [29.606256347898835, 52.467218643803626],
-    ], {
-        color: 'green',
-        fillColor: 'green',
-    }
+    [29.611485196721464, 52.468101407336775],
+    [29.6050131178401, 52.49018382383847],
+    [29.60070958018711, 52.496921952379836],
+    [29.59896748390389, 52.500839210649474],
+    [29.596035590213763, 52.50992645695803],
+    [29.57321671597567, 52.50478342705975],
+    [29.575003419736863, 52.49925404865084],
+    [29.577005833643668, 52.49673879402647],
+    [29.579279895890338, 52.49422265099454],
+    [29.580793670190705, 52.49148056074872],
+    [29.587481734614883, 52.480093318954175],
+    [29.59013558764032, 52.47680451377478],
+    [29.59566150631803, 52.47388316507248],
+    [29.60311929207729, 52.471600578506596],
+    [29.604950996647112, 52.47021674237663],
+    [29.606256347898835, 52.467218643803626],
+], {
+    color: 'green',
+    fillColor: 'green',
+}
 
 ).addTo(myMap);
 
 // Yellow area on the map
 var polygon = L.polygon([
-        [29.617311088530325, 52.486545859329304],
-        [29.615819809609274, 52.5144371301665],
-        [29.607494753146092, 52.51327602792027],
-        [29.604163714742302, 52.5156582195362],
-        [29.61270505614918, 52.48481254993158]
-    ], {
-        color: 'yellow',
-        fillColor: 'yellow',
-    }
+    [29.617311088530325, 52.486545859329304],
+    [29.615819809609274, 52.5144371301665],
+    [29.607494753146092, 52.51327602792027],
+    [29.604163714742302, 52.5156582195362],
+    [29.61270505614918, 52.48481254993158]
+], {
+    color: 'yellow',
+    fillColor: 'yellow',
+}
 
 ).addTo(myMap);
