@@ -15,24 +15,44 @@
 
 <body>
     <div id="panel" class="panel">
-        <label dir="rtl">عبارت جستجو</label>
-        <input dir="rtl" type="text" placeholder="term" required id="term">
         <h4>نقطه مرکز</h4>
         <label>latitude</label>
         <input dir="ltr" type="text" placeholder="latitude" required id="center_lat">
-        <br>
         <label>longitude</label>
         <input dir="ltr" type="text" placeholder="longitude" required id="center_lng">
-        <br>
-        <button id="search" onclick="search()">Search</button>
         <button id="userLocation" onclick="whereAmI()">where am I ?</button>
-        <!--Search_Result-->
         <p dir="rtl" id="resultCount"></p>
+
+    </div> -->
+
+    </div>
+    <footer>
         <div id="resualt">
 
         </div>
+        <div id="searchBox">
+            <label dir="rtl">عبارت جستجو</label>
+            <input dir="rtl" type="text" placeholder="term" required id="term">
+            <img src="../image/search.png" alt="" id="search" onclick="search()">
+        </div>
 
-    </div>
+        <div id="container-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" style="    width: 100%;
+        height: 20vh;" width="330" height="110" viewBox="0 0 330 110" fill="none">
+                <path
+                    d="M0 40.3357C0 30.343 7.37558 21.8836 17.2751 20.5222L163.75 0.378175C165.575 0.127262 167.425 0.129551 169.249 0.384981L312.774 20.4855C322.651 21.8688 330 30.3182 330 40.2922V90C330 101.046 321.046 110 310 110L20 110C8.95431 110 0 101.046 0 90L0 40.3357Z"
+                    fill="url(#paint0_linear_48_866)" />
+                <defs>
+                    <linearGradient id="paint0_linear_48_866" x1="165" y1="16.5" x2="165" y2="120"
+                        gradientUnits="userSpaceOnUse">
+                        <stop offset="0.0955392" stop-color="#C2E6F0" stop-opacity="0.72" />
+                        <stop offset="0.588562" stop-color="#87B4C2" stop-opacity="0.8" />
+                        <stop offset="0.992606" stop-color="#3B5CAB" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </footer>
     <div id="map"></div>
     <p id="log">logs</p>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
