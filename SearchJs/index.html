@@ -14,16 +14,15 @@
 </head>
 
 <body>
-    <div id="panel" class="panel">
+    <!-- <div id="panel" class="panel">
         <h4>نقطه مرکز</h4>
         <label>latitude</label>
         <input dir="ltr" type="text" placeholder="latitude" required id="center_lat">
         <label>longitude</label>
         <input dir="ltr" type="text" placeholder="longitude" required id="center_lng">
-        <button id="userLocation" onclick="whereAmI()">where am I ?</button>
         <p dir="rtl" id="resultCount"></p>
-
-    </div>
+        
+    </div> -->
 
     </div>
     <footer>
@@ -31,6 +30,7 @@
 
         </div>
         <div id="searchBox">
+            <button id="userLocation" onclick="whereAmI()">where am I ?</button>
             <label dir="rtl">عبارت جستجو</label>
             <input dir="rtl" type="text" placeholder="term" required id="term">
             <img src="../image/search.png" alt="" id="search" onclick="search()">
