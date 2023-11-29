@@ -50,58 +50,150 @@ let defualte = new LeafIcon({
     iconUrl: 'icon/location-pin-svgrepo-com.svg',
     // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
-// location of icon01 + Popup
+// location of icon + Popup
 L.marker([29.601881, 52.525726], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 1تا 3 کالای برق صنعتی تسلا الکتریکی");
-// location of icon02 + Popup
+// location of icon + Popup
 L.marker([29.602326, 52.526147], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 5تا 7 مقابل فروشگاه لوله و اتصالات رییسی");
-// // location of icon03 + Popup
+// location of icon + Popup
 L.marker([29.602626, 52.526403], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 7تا 9 مقابل ابزار الات ترکمن");
+// location of icon + Popup
 L.marker([29.603307, 52.527038], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 11تا 13 مقابل فروشگاه قفسه")
+// location of icon + Popup
 L.marker([29.603307, 52.528251], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 19 تا خیابان شهید طبری - مقابل رنگ سرای ماهور")
+// location of icon + Popup
 L.marker([29.606106, 52.529547], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل خیابان شهید ظبری تا 25 مقبال لوله و اتصالات پیمان جنب ظروف یکبار مصرف ارتاپلاس(از لوله و اتصالات پیمان تا بازرگانی فرش موکن توافق)")
+// location of icon + Popup
 L.marker([29.606562, 52.529971], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حد فاصل کوچه 27تا 29 مثابل ابزار و یراق سعدی")
+// location of icon + Popup
 L.marker([29.607243, 52.530596], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 31تا 33 مقابل فروشگاه لوازم خانگی پارس")
+// location of icon + Popup
 L.marker([29.608193, 52.531449], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 32تا 30 مقابل ابزار قدس")
+// location of icon + Popup
 L.marker([29.607594, 52.530835], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 30تا 28 مقابل لوله و اتصالات خاتم الانبیاء")
+// location of icon + Popup
 L.marker([29.607344, 52.530587], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 26تا 28 مقابل صنعت برق حسینی")
+// location of icon + Popup
 L.marker([29.606811, 52.530108], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- مقابل کوچه 24تا 26 مقابل لوله و اتصالات احسان")
+// location of icon + Popup
 L.marker([29.606609, 52.529915], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 22تا 20 مقابل فروشگاه ایران لوازم آشپزخانه")
+// location of icon + Popup
 L.marker([29.605729, 52.529135], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 18تا 16 مقابل شیرالات هود, سینک توکلی")
+// location of icon + Popup
 L.marker([29.604707, 52.528207], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 14تا 12 مقابل ابزار الات زراعتی")
+// location of icon + Popup
 L.marker([29.602971, 52.526640], {
     icon: defualte
 }).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 10تا 8 مقابل لوله ساختمانی و بهداشتی قدوسی تا نرده استیل")
-
+// location of icon + Popup
+L.marker([29.621784, 52.525436], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان صورتگرد- ضلع غربی- مقابل پاساژ ولیعصر")
+// location of icon + Popup
+L.marker([29.622326, 52.525855], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان صورتگرد- ضلع غربی- حدفاصل کوچه 12تا 14- مقابل تجهیزات پزشکی بابک")
+// location of icon + Popup
+L.marker([29.62341, 52.52699], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان صورتگرد- ضلع شرقی- مقابل تجهیزات صنعتی پاسارگاد")
+// location of icon + Popup
+L.marker([29.62514, 52.52812], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان صورتگرد- ضلع شرقی- مقابل لوازم پزشکی خردمند- حدفاصل اردیبهشت تا کوچه3")
+// location of icon + Popup
+L.marker([29.62357, 52.52696], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان صورتگرد- ضلع غربی- مقابل تجهیزات پزشکی مسعود")
+// location of icon + Popup
+L.marker([29.62554, 52.52835], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان صورتگرد- ضلع شرقی- حدفاصل کوچه 3تا 1 -مقابل کفش تبریز")
+// location of icon + Popup
+L.marker([29.60789, 52.54153], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان حضرتی- مقابل مجتمع تجاری میلاد نور ضلع غربی")
+// location of icon + Popup
+L.marker([29.60680, 52.54081], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان حضرتی- روبرو مرکز تجاری سینا روبرو بانک صادرات بعد از پارکینگ حضرتی ضلع غربی")
+// location of icon + Popup
+L.marker([29.60606, 52.54034], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان حضرتی- مقابل مجتمع تجاری آریانا روبرو مجتمع هدیش و مجتمع تجاری پارسیان")
+// location of icon + Popup
+L.marker([29.60723, 52.54108], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان حضرتی- مقابل مجتمع جاری شهر")
+// location of icon + Popup
+L.marker([29.61323, 52.52813], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- وصال شمالی بعد از کوچه2- مقابل فروشگاه هوم دیزاین")
+// location of icon + Popup
+L.marker([29.614097, 52.52860], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- مقابل مبلمان میرداماد حدفاصل کوچه1تا 3")
+// location of icon + Popup
+L.marker([29.61496, 52.52910], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- بعد از کوچه 3 به سمت منوچهری مقابل گالری آوا")
+// location of icon + Popup
+L.marker([29.61496, 52.52911], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- بعد از کوچه3 به سمت منوچهری مقابل نمایشگاه مبل کورش")
+// location of icon + Popup
+L.marker([29.615425, 52.52960], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 3تا 5مقابل تشک رویال")
+// location of icon + Popup
+L.marker([29.615768, 52.529991], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 5تا 7")
+// location of icon + Popup
+L.marker([29.616085, 52.53019], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 7تا9 مقابل فروشگاه آیسان")
+// location of icon + Popup
+L.marker([29.616500, 52.530600], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 9تا11 مقابل گالری ترنج نرسیده به حائری")
+// location of icon + Popup
+L.marker([29.617395, 52.531244], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 11تا 13 مقابل گالری مبله")
+// location of icon + Popup
+L.marker([29.617837, 52.531594], {
+    icon: defualte
+}).addTo(myMap).bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 13تا 15مقابل کاور مبل عدلو")
 
 
 
