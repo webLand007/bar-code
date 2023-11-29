@@ -38,7 +38,7 @@ let centerLng = " 52.53792787943611";
 // location of Shiraz cargo terminal => show it with marker
 const LeafIcon = L.Icon.extend({
     options: {
-        iconSize: [28, 65],
+        iconSize: [18, 45],
         shadowSize: [50, 64],
         iconAnchor: [12, 64],
         shadowAnchor: [4, 62],
@@ -51,17 +51,56 @@ let defualte = new LeafIcon({
     // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
 // location of icon01 + Popup
-L.marker([29.68218188708475, 52.53309502488736], {
+L.marker([29.601881, 52.525726], {
     icon: defualte
-}).addTo(myMap).bindPopup("پایانه حمل بار شیراز");
+}).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 1تا 3 کالای برق صنعتی تسلا الکتریکی");
 // location of icon02 + Popup
-L.marker([29.545853949560765, 52.589737662746444], {
+L.marker([29.602326, 52.526147], {
     icon: defualte
-}).addTo(myMap).bindPopup(" فرودگاه بین المللی شهید دستغیب شیراز");
+}).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 5تا 7 مقابل فروشگاه لوله و اتصالات رییسی");
 // // location of icon03 + Popup
-L.marker([29.655353264688696, 52.48390338181354], {
+L.marker([29.602626, 52.526403], {
     icon: defualte
-}).addTo(myMap).bindPopup("پایانه حمل بار شیراز ");
+}).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 7تا 9 مقابل ابزار الات ترکمن");
+L.marker([29.603307, 52.527038], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 11تا 13 مقابل فروشگاه قفسه")
+L.marker([29.603307, 52.528251], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 19 تا خیابان شهید طبری - مقابل رنگ سرای ماهور")
+L.marker([29.606106, 52.529547], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل خیابان شهید ظبری تا 25 مقبال لوله و اتصالات پیمان جنب ظروف یکبار مصرف ارتاپلاس(از لوله و اتصالات پیمان تا بازرگانی فرش موکن توافق)")
+L.marker([29.606562, 52.529971], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع شرقی- حد فاصل کوچه 27تا 29 مثابل ابزار و یراق سعدی")
+L.marker([29.607243, 52.530596], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع شرقی- حدفاصل کوچه 31تا 33 مقابل فروشگاه لوازم خانگی پارس")
+L.marker([29.608193, 52.531449], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 32تا 30 مقابل ابزار قدس")
+L.marker([29.607594, 52.530835], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 30تا 28 مقابل لوله و اتصالات خاتم الانبیاء")
+L.marker([29.607344, 52.530587], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 26تا 28 مقابل صنعت برق حسینی")
+L.marker([29.606811, 52.530108], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- مقابل کوچه 24تا 26 مقابل لوله و اتصالات احسان")
+L.marker([29.606609, 52.529915], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 22تا 20 مقابل فروشگاه ایران لوازم آشپزخانه")
+L.marker([29.605729, 52.529135], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 18تا 16 مقابل شیرالات هود, سینک توکلی")
+L.marker([29.604707, 52.528207], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 14تا 12 مقابل ابزار الات زراعتی")
+L.marker([29.602971, 52.526640], {
+    icon: defualte
+}).addTo(myMap).bindPopup("ضلع غربی- حدفاصل کوچه 10تا 8 مقابل لوله ساختمانی و بهداشتی قدوسی تا نرده استیل")
 
 
 
