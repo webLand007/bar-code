@@ -7,8 +7,6 @@ let formInformation = document.querySelector('#form-information')
 let fullName = document.querySelector('#fullName')
 // input phonNumber
 let phonNumber = document.querySelector('#phonNumber')
-// input email
-let email = document.querySelector('#email')
 // btn signOut
 let signOut = document.querySelector('#signOut')
 //
@@ -56,7 +54,7 @@ function saveValueInformation(event) {
 
     // Check the correctness of the entered information
     // Parameter (input information)
-    if (checkValidation(getValueValidation()) == 3) {
+    if (checkValidation(getValueValidation()) == 2) {
         // If the information is correct (save the information)
         // Parameter (input information)
         saveInformationInLS(getValueValidation())
@@ -68,8 +66,7 @@ function getValueValidation() {
     // Return to receive the information entered by the user, in the form
     return {
         fullName: fullName.value,
-        phonNumber: phonNumber.value,
-        email: email.value
+        phonNumber: phonNumber.value
     }
 }
 
@@ -78,8 +75,6 @@ function checkValidation(UserInformation) {
     let info
     let info1
     let info2
-    let info3
-    let reg = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
 
     if (UserInformation.fullName.length <= 7) {
         // Show error for input fullName
@@ -97,15 +92,6 @@ function checkValidation(UserInformation) {
         info2 = true
     }
 
-    if (!reg.test(UserInformation.email)) {
-        // Show error for input nationalCode
-        errorMSG(email)
-        info3 = false
-    } else {
-        info3 = true
-    }
-    // sum returned from the inputs condition
-    info = info1 + info2 + info3
     return info
 }
 
@@ -149,8 +135,7 @@ function loadOfLS() {
 function signOutInAccount() {
     let UserInformation = {
         fullName: null,
-        phonNumber: null,
-        email: null
+        phonNumber: null
     }
 
     // remove information from the local storage
@@ -170,12 +155,10 @@ function showAndHideInformationPerson(info) {
         case true:
             fullName.value = lsInfo.fullName
             phonNumber.value = lsInfo.phonNumber
-            email.value = lsInfo.email
             break;
         case false:
             fullName.value = null
             phonNumber.value = null
-            email.value = null
             break;
     }
 }
