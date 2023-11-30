@@ -91,7 +91,7 @@ function checkValidation(UserInformation) {
     } else {
         info2 = true
     }
-
+    info = info1 + info2
     return info
 }
 
