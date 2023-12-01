@@ -99,6 +99,13 @@ footer {
     }
 }
 
+// class name for hide tIcon
+.hide-icon {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
 #map {
     width: 99%;
     height: 98%;
