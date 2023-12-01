@@ -27,7 +27,7 @@ let myMap = new L.Map('map', {
     poi: true,
     traffic: true,
     center: [29.606446174640958, 52.53792787943611],
-    zoom: 14
+    zoom: 14,
 });
 
 //adding the marker to map => base marker
@@ -46,497 +46,517 @@ const LeafIcon = L.Icon.extend({
     }
 });
 // choose icons
-let defualte = new LeafIcon({
+let tIcon = new LeafIcon({
     iconUrl: './icon/Trailer Unloading.svg',
+    className: "tIcon"
     // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
+// tIcons...
+let customMarkers = []
 // location of icon + Popup
-L.marker([29.601881, 52.525726], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حدفاصل کوچه 1تا 3 کالای برق صنعتی تسلا الکتریکی");
+customMarkers.push(L.marker([29.601881, 52.525726], {
+    icon: tIcon
+}) /*.bindPopup("ضلع شرقی- حدفاصل کوچه 1تا 3 کالای برق صنعتی تسلا الکتریکی")*/ )
 // location of icon + Popup
-L.marker([29.602326, 52.526147], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حدفاصل کوچه 5تا 7 مقابل فروشگاه لوله و اتصالات رییسی");
+customMarkers.push(L.marker([29.602326, 52.526147], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی- حدفاصل کوچه 5تا 7 مقابل فروشگاه لوله و اتصالات رییسی");
 // location of icon + Popup
-L.marker([29.602626, 52.526403], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حدفاصل کوچه 7تا 9 مقابل ابزار الات ترکمن");
+customMarkers.push(L.marker([29.602626, 52.526403], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی- حدفاصل کوچه 7تا 9 مقابل ابزار الات ترکمن");
 // location of icon + Popup
-L.marker([29.603307, 52.527038], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حدفاصل کوچه 11تا 13 مقابل فروشگاه قفسه")
+customMarkers.push(L.marker([29.603307, 52.527038], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی- حدفاصل کوچه 11تا 13 مقابل فروشگاه قفسه")
 // location of icon + Popup
-L.marker([29.603307, 52.528251], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حدفاصل کوچه 19 تا خیابان شهید طبری - مقابل رنگ سرای ماهور")
+customMarkers.push(L.marker([29.603307, 52.528251], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی- حدفاصل کوچه 19 تا خیابان شهید طبری - مقابل رنگ سرای ماهور")
 // location of icon + Popup
-L.marker([29.606106, 52.529547], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حدفاصل خیابان شهید ظبری تا 25 مقبال لوله و اتصالات پیمان جنب ظروف یکبار مصرف ارتاپلاس(از لوله و اتصالات پیمان تا بازرگانی فرش موکن توافق)")
+customMarkers.push(L.marker([29.606106, 52.529547], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی- حدفاصل خیابان شهید ظبری تا 25 مقبال لوله و اتصالات پیمان جنب ظروف یکبار مصرف ارتاپلاس(از لوله و اتصالات پیمان تا بازرگانی فرش موکن توافق)")
 // location of icon + Popup
-L.marker([29.606562, 52.529971], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حد فاصل کوچه 27تا 29 مثابل ابزار و یراق سعدی")
+customMarkers.push(L.marker([29.606562, 52.529971], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی- حد فاصل کوچه 27تا 29 مثابل ابزار و یراق سعدی")
 // location of icon + Popup
-L.marker([29.607243, 52.530596], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی- حدفاصل کوچه 31تا 33 مقابل فروشگاه لوازم خانگی پارس")
+customMarkers.push(L.marker([29.607243, 52.530596], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی- حدفاصل کوچه 31تا 33 مقابل فروشگاه لوازم خانگی پارس")
 // location of icon + Popup
-L.marker([29.608193, 52.531449], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- حدفاصل کوچه 32تا 30 مقابل ابزار قدس")
+customMarkers.push(L.marker([29.608193, 52.531449], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- حدفاصل کوچه 32تا 30 مقابل ابزار قدس")
 // location of icon + Popup
-L.marker([29.607594, 52.530835], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- حدفاصل کوچه 30تا 28 مقابل لوله و اتصالات خاتم الانبیاء")
+customMarkers.push(L.marker([29.607594, 52.530835], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- حدفاصل کوچه 30تا 28 مقابل لوله و اتصالات خاتم الانبیاء")
 // location of icon + Popup
-L.marker([29.607344, 52.530587], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- حدفاصل کوچه 26تا 28 مقابل صنعت برق حسینی")
+customMarkers.push(L.marker([29.607344, 52.530587], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- حدفاصل کوچه 26تا 28 مقابل صنعت برق حسینی")
 // location of icon + Popup
-L.marker([29.606811, 52.530108], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- مقابل کوچه 24تا 26 مقابل لوله و اتصالات احسان")
+customMarkers.push(L.marker([29.606811, 52.530108], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- مقابل کوچه 24تا 26 مقابل لوله و اتصالات احسان")
 // location of icon + Popup
-L.marker([29.606609, 52.529915], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- حدفاصل کوچه 22تا 20 مقابل فروشگاه ایران لوازم آشپزخانه")
+customMarkers.push(L.marker([29.606609, 52.529915], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- حدفاصل کوچه 22تا 20 مقابل فروشگاه ایران لوازم آشپزخانه")
 // location of icon + Popup
-L.marker([29.605729, 52.529135], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- حدفاصل کوچه 18تا 16 مقابل شیرالات هود, سینک توکلی")
+customMarkers.push(L.marker([29.605729, 52.529135], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- حدفاصل کوچه 18تا 16 مقابل شیرالات هود, سینک توکلی")
 // location of icon + Popup
-L.marker([29.604707, 52.528207], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- حدفاصل کوچه 14تا 12 مقابل ابزار الات زراعتی")
+customMarkers.push(L.marker([29.604707, 52.528207], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- حدفاصل کوچه 14تا 12 مقابل ابزار الات زراعتی")
 // location of icon + Popup
-L.marker([29.602971, 52.526640], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی- حدفاصل کوچه 10تا 8 مقابل لوله ساختمانی و بهداشتی قدوسی تا نرده استیل")
+customMarkers.push(L.marker([29.602971, 52.526640], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی- حدفاصل کوچه 10تا 8 مقابل لوله ساختمانی و بهداشتی قدوسی تا نرده استیل")
 // location of icon + Popup
-L.marker([29.621784, 52.525436], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان صورتگرد- ضلع غربی- مقابل پاساژ ولیعصر")
+customMarkers.push(L.marker([29.621784, 52.525436], {
+    icon: tIcon
+})) //.bindPopup("خیابان صورتگرد- ضلع غربی- مقابل پاساژ ولیعصر")
 // location of icon + Popup
-L.marker([29.622326, 52.525855], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان صورتگرد- ضلع غربی- حدفاصل کوچه 12تا 14- مقابل تجهیزات پزشکی بابک")
+customMarkers.push(L.marker([29.622326, 52.525855], {
+    icon: tIcon
+})) //.bindPopup("خیابان صورتگرد- ضلع غربی- حدفاصل کوچه 12تا 14- مقابل تجهیزات پزشکی بابک")
 // location of icon + Popup
-L.marker([29.62341, 52.52699], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان صورتگرد- ضلع شرقی- مقابل تجهیزات صنعتی پاسارگاد")
+customMarkers.push(L.marker([29.62341, 52.52699], {
+    icon: tIcon
+})) //.bindPopup("خیابان صورتگرد- ضلع شرقی- مقابل تجهیزات صنعتی پاسارگاد")
 // location of icon + Popup
-L.marker([29.62514, 52.52812], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان صورتگرد- ضلع شرقی- مقابل لوازم پزشکی خردمند- حدفاصل اردیبهشت تا کوچه3")
+customMarkers.push(L.marker([29.62514, 52.52812], {
+    icon: tIcon
+})) //.bindPopup("خیابان صورتگرد- ضلع شرقی- مقابل لوازم پزشکی خردمند- حدفاصل اردیبهشت تا کوچه3")
 // location of icon + Popup
-L.marker([29.62357, 52.52696], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان صورتگرد- ضلع غربی- مقابل تجهیزات پزشکی مسعود")
+customMarkers.push(L.marker([29.62357, 52.52696], {
+    icon: tIcon
+})) //.bindPopup("خیابان صورتگرد- ضلع غربی- مقابل تجهیزات پزشکی مسعود")
 // location of icon + Popup
-L.marker([29.62554, 52.52835], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان صورتگرد- ضلع شرقی- حدفاصل کوچه 3تا 1 -مقابل کفش تبریز")
+customMarkers.push(L.marker([29.62554, 52.52835], {
+    icon: tIcon
+})) //.bindPopup("خیابان صورتگرد- ضلع شرقی- حدفاصل کوچه 3تا 1 -مقابل کفش تبریز")
 // location of icon + Popup
-L.marker([29.60789, 52.54153], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان حضرتی- مقابل مجتمع تجاری میلاد نور ضلع غربی")
+customMarkers.push(L.marker([29.60789, 52.54153], {
+    icon: tIcon
+})) //.bindPopup("خیابان حضرتی- مقابل مجتمع تجاری میلاد نور ضلع غربی")
 // location of icon + Popup
-L.marker([29.60680, 52.54081], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان حضرتی- روبرو مرکز تجاری سینا روبرو بانک صادرات بعد از پارکینگ حضرتی ضلع غربی")
+customMarkers.push(L.marker([29.60680, 52.54081], {
+    icon: tIcon
+})) //.bindPopup("خیابان حضرتی- روبرو مرکز تجاری سینا روبرو بانک صادرات بعد از پارکینگ حضرتی ضلع غربی")
 // location of icon + Popup
-L.marker([29.60606, 52.54034], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان حضرتی- مقابل مجتمع تجاری آریانا روبرو مجتمع هدیش و مجتمع تجاری پارسیان")
+customMarkers.push(L.marker([29.60606, 52.54034], {
+    icon: tIcon
+})) //.bindPopup("خیابان حضرتی- مقابل مجتمع تجاری آریانا روبرو مجتمع هدیش و مجتمع تجاری پارسیان")
 // location of icon + Popup
-L.marker([29.60723, 52.54108], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان حضرتی- مقابل مجتمع جاری شهر")
+customMarkers.push(L.marker([29.60723, 52.54108], {
+    icon: tIcon
+})) //.bindPopup("خیابان حضرتی- مقابل مجتمع جاری شهر")
 // location of icon + Popup
-L.marker([29.61323, 52.52813], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- وصال شمالی بعد از کوچه2- مقابل فروشگاه هوم دیزاین")
+customMarkers.push(L.marker([29.61323, 52.52813], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- وصال شمالی بعد از کوچه2- مقابل فروشگاه هوم دیزاین")
 // location of icon + Popup
-L.marker([29.614097, 52.52860], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- مقابل مبلمان میرداماد حدفاصل کوچه1تا 3")
+customMarkers.push(L.marker([29.614097, 52.52860], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- مقابل مبلمان میرداماد حدفاصل کوچه1تا 3")
 // location of icon + Popup
-L.marker([29.61496, 52.52910], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- بعد از کوچه 3 به سمت منوچهری مقابل گالری آوا")
+customMarkers.push(L.marker([29.61496, 52.52910], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- بعد از کوچه 3 به سمت منوچهری مقابل گالری آوا")
 // location of icon + Popup
-L.marker([29.61496, 52.52911], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- بعد از کوچه3 به سمت منوچهری مقابل نمایشگاه مبل کورش")
+customMarkers.push(L.marker([29.61496, 52.52911], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- بعد از کوچه3 به سمت منوچهری مقابل نمایشگاه مبل کورش")
 // location of icon + Popup
-L.marker([29.615425, 52.52960], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 3تا 5مقابل تشک رویال")
+customMarkers.push(L.marker([29.615425, 52.52960], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 3تا 5مقابل تشک رویال")
 // location of icon + Popup
-L.marker([29.615768, 52.529991], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 5تا 7")
+customMarkers.push(L.marker([29.615768, 52.529991], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 5تا 7")
 // location of icon + Popup
-L.marker([29.616085, 52.53019], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 7تا9 مقابل فروشگاه آیسان")
+customMarkers.push(L.marker([29.616085, 52.53019], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 7تا9 مقابل فروشگاه آیسان")
 // location of icon + Popup
-L.marker([29.616500, 52.530600], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 9تا11 مقابل گالری ترنج نرسیده به حائری")
+customMarkers.push(L.marker([29.616500, 52.530600], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 9تا11 مقابل گالری ترنج نرسیده به حائری")
 // location of icon + Popup
-L.marker([29.617395, 52.531244], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 11تا 13 مقابل گالری مبله")
+customMarkers.push(L.marker([29.617395, 52.531244], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 11تا 13 مقابل گالری مبله")
 // location of icon + Popup
-L.marker([29.617837, 52.531594], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 13تا 15مقابل کاور مبل عدلو")
+customMarkers.push(L.marker([29.617837, 52.531594], {
+    icon: tIcon
+})) //.bindPopup("خیابان وصال شمالی- ضلع شرقی- حدفاصل کوچه 13تا 15مقابل کاور مبل عدلو")
 // location of icon + Popup
-L.marker([29.613352, 52.555362], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل گروە صنعتی ابزار سازان حدفاصل کوچه ٢ تا ۴")
+customMarkers.push(L.marker([29.613352, 52.555362], {
+    icon: tIcon
+})) //.bindPopup("مقابل گروە صنعتی ابزار سازان حدفاصل کوچه ٢ تا ۴")
 // location of icon + Popup
-L.marker([29.615713, 52.554132], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل لوازم کشاورزی آبفشان بعد از اداره برق منطقه یک")
+customMarkers.push(L.marker([29.615713, 52.554132], {
+    icon: tIcon
+})) //.bindPopup("مقابل لوازم کشاورزی آبفشان بعد از اداره برق منطقه یک")
 // location of icon + Popup
-L.marker([29.616937, 52.553541], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل فروشگاه سیهر ابزار تا ابزار جهان")
+customMarkers.push(L.marker([29.616937, 52.553541], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل فروشگاه سیهر ابزار تا ابزار جهان")
 // location of icon + Popup
-L.marker([29.616957, 52.553565], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل ابزار مهدی حدفاصل کوچه ١٧ تا ١٩")
+customMarkers.push(L.marker([29.616957, 52.553565], {
+    icon: tIcon
+})) //.bindPopup("مقابل ابزار مهدی حدفاصل کوچه ١٧ تا ١٩")
 // location of icon + Popup
-L.marker([29.619247, 52.551357], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل دنیای موتور سیکلت حدفاصل خیابان مولی الموحدین تا چهاررراه دروازه اصفهان")
+customMarkers.push(L.marker([29.619247, 52.551357], {
+    icon: tIcon
+})) //.bindPopup("مقابل دنیای موتور سیکلت حدفاصل خیابان مولی الموحدین تا چهاررراه دروازه اصفهان")
 // location of icon + Popup
-L.marker([29.621497, 52.522629], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("بعد از کوچه ٢٢ - مقابل پاساژ رستگار")
+customMarkers.push(L.marker([29.621497, 52.522629], {
+    icon: tIcon
+})) //.bindPopup("بعد از کوچه ٢٢ - مقابل پاساژ رستگار")
 // location of icon + Popup
-L.marker([29.620798, 52.522089], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل کوچه ٢٠ و ١٨ - مقابل تشک لیلیان")
+customMarkers.push(L.marker([29.620798, 52.522089], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل کوچه ٢٠ و ١٨ - مقابل تشک لیلیان")
 // location of icon + Popup
-L.marker([29.620638, 52.522007], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل كوچه ١٧ و ١٩ - ضلع شرقی - مقابل موسسه چاپ شقایق")
+customMarkers.push(L.marker([29.620638, 52.522007], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل كوچه ١٧ و ١٩ - ضلع شرقی - مقابل موسسه چاپ شقایق")
 // location of icon + Popup
-L.marker([29.618682, 52.520405], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل کوچه ١٢ و ١٠ - روبروی فروشگاه جامبو ضلع غربی")
+customMarkers.push(L.marker([29.618682, 52.520405], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل کوچه ١٢ و ١٠ - روبروی فروشگاه جامبو ضلع غربی")
 // location of icon + Popup
-L.marker([29.617315, 52.519356], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("کوچه ٩ ضلع شرقی مقابل میوە فروشی")
+customMarkers.push(L.marker([29.617315, 52.519356], {
+    icon: tIcon
+})) //.bindPopup("کوچه ٩ ضلع شرقی مقابل میوە فروشی")
 // location of icon + Popup
-L.marker([29.618690, 52.551149], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل کالای خانگی جهانگیر، نبش کوچه ٣۴")
+customMarkers.push(L.marker([29.618690, 52.551149], {
+    icon: tIcon
+})) //.bindPopup("مقابل کالای خانگی جهانگیر، نبش کوچه ٣۴")
 // location of icon + Popup
-L.marker([29.618136, 52.551512], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل خشکبار شفیعی خان ( فروشگاہ اسباب بازی نورانی) حدفاصل کوچه ٣٠ تا ٣٢")
+customMarkers.push(L.marker([29.618136, 52.551512], {
+    icon: tIcon
+})) //.bindPopup("مقابل خشکبار شفیعی خان ( فروشگاہ اسباب بازی نورانی) حدفاصل کوچه ٣٠ تا ٣٢")
 // location of icon + Popup
-L.marker([29.617544, 52.551971], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل زورخانه بنی فاطمه - ظروف یکبار مصرف کاظمی حدفاصل کوچه ٢۶ تا ٣٠")
+customMarkers.push(L.marker([29.617544, 52.551971], {
+    icon: tIcon
+})) //.bindPopup("مقابل زورخانه بنی فاطمه - ظروف یکبار مصرف کاظمی حدفاصل کوچه ٢۶ تا ٣٠")
 // location of icon + Popup
-L.marker([29.617041, 52.552330], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل خشكبار بانشی حدفاصل کوچه ٢۴ تا ٢۶")
+customMarkers.push(L.marker([29.617041, 52.552330], {
+    icon: tIcon
+})) //.bindPopup("مقابل خشكبار بانشی حدفاصل کوچه ٢۴ تا ٢۶")
 // location of icon + Popup
-L.marker([29.616119, 52.552784], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل مواد غنایی لوتوس حدفاصل کوچه ٢٠ تا ٢٢")
+customMarkers.push(L.marker([29.616119, 52.552784], {
+    icon: tIcon
+})) //.bindPopup("مقابل مواد غنایی لوتوس حدفاصل کوچه ٢٠ تا ٢٢")
 // location of icon + Popup
-L.marker([29.614033, 52.553270], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("روبروی فروشگاہ جعفریان (بیرون بر آراس) حدفاصل کوچه ١٠ تا ١٢")
+customMarkers.push(L.marker([29.614033, 52.553270], {
+    icon: tIcon
+})) //.bindPopup("روبروی فروشگاہ جعفریان (بیرون بر آراس) حدفاصل کوچه ١٠ تا ١٢")
 // location of icon + Popup
-L.marker([29.605063, 52.537241], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شمالی مقابل ماهی و میگو مروارید قبل از پارکینگ سیبویه")
+customMarkers.push(L.marker([29.605063, 52.537241], {
+    icon: tIcon
+})) //.bindPopup("ضلع شمالی مقابل ماهی و میگو مروارید قبل از پارکینگ سیبویه")
 // location of icon + Popup
-L.marker([29.605518, 52.536680], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شمالی قبل از سرای برنج و حبوبات شاليزار مقابل فروشگاه حقیقی (فروشگاه كوشت)")
+customMarkers.push(L.marker([29.605518, 52.536680], {
+    icon: tIcon
+})) //.bindPopup("ضلع شمالی قبل از سرای برنج و حبوبات شاليزار مقابل فروشگاه حقیقی (فروشگاه كوشت)")
 // location of icon + Popup
-L.marker([29.606501, 52.535587], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل پیتزا همبر گر ویژه")
+customMarkers.push(L.marker([29.606501, 52.535587], {
+    icon: tIcon
+})) //.bindPopup("مقابل پیتزا همبر گر ویژه")
 // location of icon + Popup
-L.marker([29.607248, 52.534831], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شمالی روبروی مجموعه ورزشی دستغیب - فروشگاه سوپری دنا")
+customMarkers.push(L.marker([29.607248, 52.534831], {
+    icon: tIcon
+})) //.bindPopup("ضلع شمالی روبروی مجموعه ورزشی دستغیب - فروشگاه سوپری دنا")
 // location of icon + Popup
-L.marker([29.607904, 52.534254], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("قبل از ماهی و میگو جنوب مقابل نایلکس فارس")
+customMarkers.push(L.marker([29.607904, 52.534254], {
+    icon: tIcon
+})) //.bindPopup("قبل از ماهی و میگو جنوب مقابل نایلکس فارس")
 // location of icon + Popup
-L.marker([29.608880, 52.532975], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل ماهی و میگو صیادان تا فرآروده های گوشتی جمشیدی نرسیده به قانى كهنه (ضلع شمالی)")
+customMarkers.push(L.marker([29.608880, 52.532975], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل ماهی و میگو صیادان تا فرآروده های گوشتی جمشیدی نرسیده به قانى كهنه (ضلع شمالی)")
 // location of icon + Popup
-L.marker([29.608584, 52.532944], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع جنوبی مقابل فروشگاه مر کزی مرغ و گوشت بالپا جنب پل هوایی")
+customMarkers.push(L.marker([29.608584, 52.532944], {
+    icon: tIcon
+})) //.bindPopup("ضلع جنوبی مقابل فروشگاه مر کزی مرغ و گوشت بالپا جنب پل هوایی")
 // location of icon + Popup
-L.marker([29.621548, 52.545290], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("فردوسى شرقى- مقابل تسمه چالاک قسمت كندرو")
+customMarkers.push(L.marker([29.621548, 52.545290], {
+    icon: tIcon
+})) //.bindPopup("فردوسى شرقى- مقابل تسمه چالاک قسمت كندرو")
 // location of icon + Popup
-L.marker([29.622679, 52.543248], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("فردوسی غربی- مقابل درب هتل تالار")
+customMarkers.push(L.marker([29.622679, 52.543248], {
+    icon: tIcon
+})) //.bindPopup("فردوسی غربی- مقابل درب هتل تالار")
 // location of icon + Popup
-L.marker([29.609829, 52.531497], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شمالی مقابل فروشگاه دروازه نرسیده به هفته به هفته")
+customMarkers.push(L.marker([29.609829, 52.531497], {
+    icon: tIcon
+})) //.bindPopup("ضلع شمالی مقابل فروشگاه دروازه نرسیده به هفته به هفته")
 // location of icon + Popup
-L.marker([29.610596, 52.530402], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شمالی مقابل فروشگاه جعفرزاده روپروی پار کینگ طبقاتی فخرآباد")
+customMarkers.push(L.marker([29.610596, 52.530402], {
+    icon: tIcon
+})) //.bindPopup("ضلع شمالی مقابل فروشگاه جعفرزاده روپروی پار کینگ طبقاتی فخرآباد")
 // location of icon + Popup
 L.marker([29.611063, 52.529745], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شمالی مقابل فروشگاہ قنادی قلع روبروی مجتمع تجاری مشیر (روپروی پارک)")
+    icon: tIcon
+}) //.bindPopup("ضلع شمالی مقابل فروشگاہ قنادی قلع روبروی مجتمع تجاری مشیر (روپروی پارک)")
 // location of icon + Popup
-L.marker([29.611402, 52.529257], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شمالی روبروی مجتمع مشیر مقابل بازر گانی ابزار ارگ")
+customMarkers.push(L.marker([29.611402, 52.529257], {
+    icon: tIcon
+})) //.bindPopup("ضلع شمالی روبروی مجتمع مشیر مقابل بازر گانی ابزار ارگ")
 // location of icon + Popup
-L.marker([29.615618, 52.537284], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل پاساژ مهتاب شب حدفاصل کوچه ١٨ تا ١۶")
+customMarkers.push(L.marker([29.615618, 52.537284], {
+    icon: tIcon
+})) //.bindPopup("مقابل پاساژ مهتاب شب حدفاصل کوچه ١٨ تا ١۶")
 // location of icon + Popup
-L.marker([29.615344, 52.537205], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل کوچه ١۶ تا ١٨ مقابل مجتمع تجاری مشيریه")
+customMarkers.push(L.marker([29.615344, 52.537205], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل کوچه ١۶ تا ١٨ مقابل مجتمع تجاری مشيریه")
 // location of icon + Popup
-L.marker([29.614439, 52.536659], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل فروشگاه پارس ملل حدفاصل کوچه ١۶ تا ١۴")
+customMarkers.push(L.marker([29.614439, 52.536659], {
+    icon: tIcon
+})) //.bindPopup("مقابل فروشگاه پارس ملل حدفاصل کوچه ١۶ تا ١۴")
 // location of icon + Popup
-L.marker([29.614012, 52.536290], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل کوچه ١۴ تا خیابان حاتری شیرازی مقابل مر کز خدمات صوتی، تصویری، کامپیوتری هلند")
+customMarkers.push(L.marker([29.614012, 52.536290], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل کوچه ١۴ تا خیابان حاتری شیرازی مقابل مر کز خدمات صوتی، تصویری، کامپیوتری هلند")
 // location of icon + Popup
-L.marker([29.612847, 52.535342], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل كوچه ١٢ تا ١٠ مقابل ابزار سپه")
+customMarkers.push(L.marker([29.612847, 52.535342], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل كوچه ١٢ تا ١٠ مقابل ابزار سپه")
 // location of icon + Popup
-L.marker([29.611588, 52.534267], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل خیابان منوچهری تا کوچه ٨ مقابل ابزار یزاف")
+customMarkers.push(L.marker([29.611588, 52.534267], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل خیابان منوچهری تا کوچه ٨ مقابل ابزار یزاف")
 // location of icon + Popup
-L.marker([29.620967, 52.546135], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل گاو صندوق نسوز کاوه نرسیده به پارکینگ عمومی ضلع غربی دست راست ساختمان هجرت ٢")
+customMarkers.push(L.marker([29.620967, 52.546135], {
+    icon: tIcon
+})) //.bindPopup("مقابل گاو صندوق نسوز کاوه نرسیده به پارکینگ عمومی ضلع غربی دست راست ساختمان هجرت ٢")
 // location of icon + Popup
-L.marker([29.614012, 52.541316], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل پاساژ کویتی ها حدفاصل کوچه ۵٣ تا ۵۵")
+customMarkers.push(L.marker([29.614012, 52.541316], {
+    icon: tIcon
+})) //.bindPopup("مقابل پاساژ کویتی ها حدفاصل کوچه ۵٣ تا ۵۵")
 // location of icon + Popup
-L.marker([29.612763, 52.543441], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("نبش کوچه ۵١ مقابل پاساژ ایران زر")
+customMarkers.push(L.marker([29.612763, 52.543441], {
+    icon: tIcon
+})) //.bindPopup("نبش کوچه ۵١ مقابل پاساژ ایران زر")
 // location of icon + Popup
-L.marker([29.612711, 52.543548], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل فروشگاه سعیدیان حدفاصل کوچه ۴٩ تا ۵١")
+customMarkers.push(L.marker([29.612711, 52.543548], {
+    icon: tIcon
+})) //.bindPopup("مقابل فروشگاه سعیدیان حدفاصل کوچه ۴٩ تا ۵١")
 // location of icon + Popup
-L.marker([29.612711, 52.543548], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل منسوجات امید حد فاصل کوچه ۴٩ تا ۵١")
+customMarkers.push(L.marker([29.612711, 52.543548], {
+    icon: tIcon
+})) //.bindPopup("مقابل منسوجات امید حد فاصل کوچه ۴٩ تا ۵١")
 // location of icon + Popup
-L.marker([29.611785, 52.545037], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("سه راه احمدی به طرف مصدق مقابل فروشگاه لوازم خانگی سید هاشمی")
+customMarkers.push(L.marker([29.611785, 52.545037], {
+    icon: tIcon
+})) //.bindPopup("سه راه احمدی به طرف مصدق مقابل فروشگاه لوازم خانگی سید هاشمی")
 // location of icon + Popup
-L.marker([29.611589, 52.545405], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل گالری فرش قاسمی حدفاصل کوچه ۴٩ تا ۴٧")
+customMarkers.push(L.marker([29.611589, 52.545405], {
+    icon: tIcon
+})) //.bindPopup("مقابل گالری فرش قاسمی حدفاصل کوچه ۴٩ تا ۴٧")
 // location of icon + Popup
-L.marker([29.611390, 52.545763], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل بازار حاجی حدفاصل کوچه ۴٧ تا ۴۵")
+customMarkers.push(L.marker([29.611390, 52.545763], {
+    icon: tIcon
+})) //.bindPopup("مقابل بازار حاجی حدفاصل کوچه ۴٧ تا ۴۵")
 // location of icon + Popup
-L.marker([29.608813, 52.550103], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل فروشگاه جامبو حدفاصل کوچه ٣١تا ٣٣")
+customMarkers.push(L.marker([29.608813, 52.550103], {
+    icon: tIcon
+})) //.bindPopup("مقابل فروشگاه جامبو حدفاصل کوچه ٣١تا ٣٣")
 // location of icon + Popup
-L.marker([29.626891, 52.526501], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ابتدای خیابان هفت تیر از سمت بلوار زند-مقابل شب چره")
+customMarkers.push(L.marker([29.626891, 52.526501], {
+    icon: tIcon
+})) //.bindPopup("ابتدای خیابان هفت تیر از سمت بلوار زند-مقابل شب چره")
 // location of icon + Popup
-L.marker([29.626238, 52.525976], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("از سمت بلوار زند قبل از تقاطع ارديبهشت مقابل کبابی مرشد")
+customMarkers.push(L.marker([29.626238, 52.525976], {
+    icon: tIcon
+})) //.bindPopup("از سمت بلوار زند قبل از تقاطع ارديبهشت مقابل کبابی مرشد")
 // location of icon + Popup
-L.marker([29.624881, 52.525081], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("بعد از تقاطع معدل به سمت هدایت سمت راست مقابل فروشگاه ساحل چوب")
+customMarkers.push(L.marker([29.624881, 52.525081], {
+    icon: tIcon
+})) //.bindPopup("بعد از تقاطع معدل به سمت هدایت سمت راست مقابل فروشگاه ساحل چوب")
 // location of icon + Popup
-L.marker([29.623571, 52.524063], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی - حدفاصل فروشگاه پاناسونیک تا داروخانه - حدفاصل تقاطع هدایت تا سینما سعدی")
+customMarkers.push(L.marker([29.623571, 52.524063], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی - حدفاصل فروشگاه پاناسونیک تا داروخانه - حدفاصل تقاطع هدایت تا سینما سعدی")
 // location of icon + Popup
-L.marker([29.626067, 52.521867], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل قنادى رضا - ضلع شرقى - حدفاصل هدایت تا فلسطین")
+customMarkers.push(L.marker([29.626067, 52.521867], {
+    icon: tIcon
+})) //.bindPopup("مقابل قنادى رضا - ضلع شرقى - حدفاصل هدایت تا فلسطین")
 // location of icon + Popup
-L.marker([29.626545, 52.522190], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("روبروی کوچه ١ - مقابل فروشگاہ آب پارس")
+customMarkers.push(L.marker([29.626545, 52.522190], {
+    icon: tIcon
+})) //.bindPopup("روبروی کوچه ١ - مقابل فروشگاہ آب پارس")
 // location of icon + Popup
-L.marker([29.678309, 52.455356], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقى : از سمت ميدان احسان جنب تيرازيس و ايستكاه مترو")
+customMarkers.push(L.marker([29.678309, 52.455356], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقى : از سمت ميدان احسان جنب تيرازيس و ايستكاه مترو")
 // location of icon + Popup
-L.marker([29.678837, 52.456484], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی : ٢٠ متر بعد از خیابان دنا مقابل داروخانه دکتر دانیالی")
+customMarkers.push(L.marker([29.678837, 52.456484], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی : ٢٠ متر بعد از خیابان دنا مقابل داروخانه دکتر دانیالی")
 // location of icon + Popup
-L.marker([29.679678, 52.458202], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی : بعد از پل هوایی قبل از خیابان پزشکان مقابل میوه و تره بار پزشكان")
+customMarkers.push(L.marker([29.679678, 52.458202], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی : بعد از پل هوایی قبل از خیابان پزشکان مقابل میوه و تره بار پزشكان")
 // location of icon + Popup
-L.marker([29.68099, 52.461368], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی : مقابل مجتمع تجاری الوند- نرسیده به بلوار دوستان")
+customMarkers.push(L.marker([29.68099, 52.461368], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی : مقابل مجتمع تجاری الوند- نرسیده به بلوار دوستان")
 // location of icon + Popup
-L.marker([29.682240, 52.464169], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی : مقابل مجتمع تجاری نغمه حدفاصل کوچه ١٧ و ١۵")
+customMarkers.push(L.marker([29.682240, 52.464169], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی : مقابل مجتمع تجاری نغمه حدفاصل کوچه ١٧ و ١۵")
 // location of icon + Popup
-L.marker([29.683461, 52.466929], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی: حدفاصل کوچه ١١ و ٩- بین مجتمع تجاری افتاب و مجتمع تجاری یونیک")
+customMarkers.push(L.marker([29.683461, 52.466929], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی: حدفاصل کوچه ١١ و ٩- بین مجتمع تجاری افتاب و مجتمع تجاری یونیک")
 // location of icon + Popup
-L.marker([29.684448, 52.469177], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقى : حدفاصل كوچه ۵ و ٣ - مقابل لبنیات سنتى سانو")
+customMarkers.push(L.marker([29.684448, 52.469177], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقى : حدفاصل كوچه ۵ و ٣ - مقابل لبنیات سنتى سانو")
 // location of icon + Popup
-L.marker([29.684821, 52.469535], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی : مقابل پلاسکو حافظ (ظروف یکبار مصرف) روپروی کوچە ٣ - سمت چپ")
+customMarkers.push(L.marker([29.684821, 52.469535], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی : مقابل پلاسکو حافظ (ظروف یکبار مصرف) روپروی کوچە ٣ - سمت چپ")
 // location of icon + Popup
-L.marker([29.685526, 52.471675], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقى : جنب خيابان رهبرماه - مقابل مجتمع تجارى آفتاب فارس")
+customMarkers.push(L.marker([29.685526, 52.471675], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقى : جنب خيابان رهبرماه - مقابل مجتمع تجارى آفتاب فارس")
 // location of icon + Popup
-L.marker([29.621018, 52.544350], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی : مقابل فروشگاه حاجیان نبش خیابان داوری - محصولات کشاورزی و صنعتی")
+customMarkers.push(L.marker([29.621018, 52.544350], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی : مقابل فروشگاه حاجیان نبش خیابان داوری - محصولات کشاورزی و صنعتی")
 // location of icon + Popup
-L.marker([29.620183, 52.543143], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی : حد فاصل خیابان مکتبی و ایزدی مقابل فروشگاه شجاعی")
+customMarkers.push(L.marker([29.620183, 52.543143], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی : حد فاصل خیابان مکتبی و ایزدی مقابل فروشگاه شجاعی")
 // location of icon + Popup
-L.marker([29.619409, 52.542332], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی : مقابل فروشگاه امير تاير و لاستیک فروشی بارز")
+customMarkers.push(L.marker([29.619409, 52.542332], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی : مقابل فروشگاه امير تاير و لاستیک فروشی بارز")
 // location of icon + Popup
-L.marker([29.619931, 52.542982], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقى : مقابل پاساژ سعدى روبروى خيابان مكتبى")
+customMarkers.push(L.marker([29.619931, 52.542982], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقى : مقابل پاساژ سعدى روبروى خيابان مكتبى")
 // location of icon + Popup
-L.marker([29.620662, 52.543880], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقی : مقابل پاساژ ایران ماشین - روبروی خیابان داوری")
+customMarkers.push(L.marker([29.620662, 52.543880], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقی : مقابل پاساژ ایران ماشین - روبروی خیابان داوری")
 // location of icon + Popup
-L.marker([29.617598, 52.546206], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی : مقابل ساندویج و فست فود كریمخان")
+customMarkers.push(L.marker([29.617598, 52.546206], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی : مقابل ساندویج و فست فود كریمخان")
 // location of icon + Popup
-L.marker([29.618629, 52.547007], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی : مقابل مهمانپذیر پیام - روبروی هتل پارس (تابلو ساز زمانی)")
+customMarkers.push(L.marker([29.618629, 52.547007], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی : مقابل مهمانپذیر پیام - روبروی هتل پارس (تابلو ساز زمانی)")
 // location of icon + Popup
-L.marker([29.619963, 52.548029], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع غربی : روبروی فروشگاه پلاستیک صنعت")
+customMarkers.push(L.marker([29.619963, 52.548029], {
+    icon: tIcon
+})) //.bindPopup("ضلع غربی : روبروی فروشگاه پلاستیک صنعت")
 // location of icon + Popup
-L.marker([29.613261, 52.543335], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقى : مابین مجتمع تجاری شادی و پاساز مرمر")
+customMarkers.push(L.marker([29.613261, 52.543335], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقى : مابین مجتمع تجاری شادی و پاساز مرمر")
 // location of icon + Popup
-L.marker([29.613616, 52.54377], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("ضلع شرقى : مقابل فروشگاه بزرک كلباران مقابل مركز خريد مادر")
+customMarkers.push(L.marker([29.613616, 52.54377], {
+    icon: tIcon
+})) //.bindPopup("ضلع شرقى : مقابل فروشگاه بزرک كلباران مقابل مركز خريد مادر")
 // location of icon + Popup
-L.marker([29.615435, 52.545356], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("انتهاى طالقانى ضلع شرقى مقابل فروشكاه فرش پارس (حق نكهدار)")
+customMarkers.push(L.marker([29.615435, 52.545356], {
+    icon: tIcon
+})) //.bindPopup("انتهاى طالقانى ضلع شرقى مقابل فروشكاه فرش پارس (حق نكهدار)")
 // location of icon + Popup
-L.marker([29.618328, 52.541012], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("روبروی مجتمع موبایل")
+customMarkers.push(L.marker([29.618328, 52.541012], {
+    icon: tIcon
+})) //.bindPopup("روبروی مجتمع موبایل")
 // location of icon + Popup
-L.marker([29.61809, 52.540689], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("روبروی پاساژ فکری")
+customMarkers.push(L.marker([29.61809, 52.540689], {
+    icon: tIcon
+})) //.bindPopup("روبروی پاساژ فکری")
 // location of icon + Popup
-L.marker([29.617839, 52.540191], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("روبروی پاساژ وحدت و پردیس")
+customMarkers.push(L.marker([29.617839, 52.540191], {
+    icon: tIcon
+})) //.bindPopup("روبروی پاساژ وحدت و پردیس")
 // location of icon + Popup
-L.marker([29.61761, 52.53993], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("پاساژ بوشهری روبروی لوازم خانگی چابهار تجاری شهر")
+customMarkers.push(L.marker([29.61761, 52.53993], {
+    icon: tIcon
+})) //.bindPopup("پاساژ بوشهری روبروی لوازم خانگی چابهار تجاری شهر")
 // location of icon + Popup
-L.marker([29.617228, 52.53926], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("روبروی خیابان اهلی حدفاصل بازار دشتی")
+customMarkers.push(L.marker([29.617228, 52.53926], {
+    icon: tIcon
+})) //.bindPopup("روبروی خیابان اهلی حدفاصل بازار دشتی")
 // location of icon + Popup
-L.marker([29.617086, 52.538945], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل پاساژ كازرونيها")
+customMarkers.push(L.marker([29.617086, 52.538945], {
+    icon: tIcon
+})) //.bindPopup("مقابل پاساژ كازرونيها")
 // location of icon + Popup
-L.marker([29.617491, 52.538842], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل ساختمان حافظ")
+customMarkers.push(L.marker([29.617491, 52.538842], {
+    icon: tIcon
+})) //.bindPopup("مقابل ساختمان حافظ")
 // location of icon + Popup
-L.marker([29.617691, 52.538547], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مابین كوچه ١٠ و ١٣ اهلى مقابل لوازم خانكی")
+customMarkers.push(L.marker([29.617691, 52.538547], {
+    icon: tIcon
+})) //.bindPopup("مابین كوچه ١٠ و ١٣ اهلى مقابل لوازم خانكی")
 // location of icon + Popup
-L.marker([29.617937, 52.538087], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل فروشگاه زنجیرە ای جانبو جنب پارکینگ طبقاتی اهلی روبروی هتل آریانا")
+customMarkers.push(L.marker([29.617937, 52.538087], {
+    icon: tIcon
+})) //.bindPopup("مقابل فروشگاه زنجیرە ای جانبو جنب پارکینگ طبقاتی اهلی روبروی هتل آریانا")
 // location of icon + Popup
-L.marker([29.618536, 52.536717], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل مجتمع تجاری اهلی روپروی همبر گر ١١٠")
+customMarkers.push(L.marker([29.618536, 52.536717], {
+    icon: tIcon
+})) //.bindPopup("مقابل مجتمع تجاری اهلی روپروی همبر گر ١١٠")
 // location of icon + Popup
-L.marker([29.617321, 52.53579], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل مركز تجارى انورى (ابتداى لطفعلى خان زند)")
+customMarkers.push(L.marker([29.617321, 52.53579], {
+    icon: tIcon
+})) //.bindPopup("مقابل مركز تجارى انورى (ابتداى لطفعلى خان زند)")
 // location of icon + Popup
-L.marker([29.619565, 52.537317], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل مجتمع تجارى مهستان")
+customMarkers.push(L.marker([29.619565, 52.537317], {
+    icon: tIcon
+})) //.bindPopup("مقابل مجتمع تجارى مهستان")
 // location of icon + Popup
-L.marker([29.622267, 52.541122], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل درب هتل آریو برزن حدفاصل کوچه ۶ تا ٨")
+customMarkers.push(L.marker([29.622267, 52.541122], {
+    icon: tIcon
+})) //.bindPopup("مقابل درب هتل آریو برزن حدفاصل کوچه ۶ تا ٨")
 // location of icon + Popup
-L.marker([29.621144, 52.540714], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("مقابل فروشكاه استخرى جنب هتل هديش")
+customMarkers.push(L.marker([29.621144, 52.540714], {
+    icon: tIcon
+})) //.bindPopup("مقابل فروشكاه استخرى جنب هتل هديش")
 // location of icon + Popup
-L.marker([29.620349, 52.540514], {
-    icon: defualte
-}).addTo(myMap) //.bindPopup("حدفاصل کوچہ ٢ تا درب ورودی مجتمع رضا روپروی میوە مار کت رود کی")
+customMarkers.push(L.marker([29.620349, 52.540514], {
+    icon: tIcon
+})) //.bindPopup("حدفاصل کوچہ ٢ تا درب ورودی مجتمع رضا روپروی میوە مار کت رود کی")
 
+// add markers to map
+customMarkers.forEach(item => {
+    item.addTo(myMap)
+})
 
-
+// condition for zoom out + zoom in
+myMap.on("zoom", () => {
+    if (myMap.getZoom() <= 12) {
+        // remove icons if zoom is less than 12 || zoom is be 12
+        customMarkers.forEach(item => {
+            myMap.removeLayer(item)
+        })
+        // add icons to the map if zoom is more than 12
+    } else {
+        customMarkers.forEach(item => {
+            item.addTo(myMap)
+        })
+    }
+})
 
 
 
@@ -595,7 +615,6 @@ function addMarkerOnMap(e) {
     // change latitude and longitude in varibles
     centerLat = e.latlng.lat;
     centerLng = e.latlng.lng;
-
     document.querySelector('#resualt').style.display = 'none'
 }
 
