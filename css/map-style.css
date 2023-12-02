@@ -11,11 +11,25 @@ body header {
 body header .container {
   width: 85%;
   margin: 3vh auto;
-  display: flex;
-  justify-content: space-between;
 }
 body header .container img {
+  position: absolute;
   width: 7vh;
+}
+body header .container #goToInformationPage {
+  left: 5%;
+}
+body header .container #goToHome {
+  right: 5%;
+}
+body #divMyLocation {
+  z-index: 2;
+  position: absolute;
+  bottom: 12vh;
+  right: 5%;
+}
+body #divMyLocation img {
+  width: 10vh;
 }
 body footer {
   overflow: scroll;
@@ -29,14 +43,6 @@ body footer {
   overflow: hidden;
   flex-direction: column;
   bottom: 4vh;
-}
-body footer > div:nth-of-type(1) {
-  text-align: right;
-  width: 100%;
-  padding: 0 2vh 2vh 0;
-}
-body footer > div:nth-of-type(1) img {
-  width: 10vh;
 }
 body footer label:first-of-type {
   margin-left: 50%;
@@ -93,12 +99,15 @@ body footer #searchBox #resualt > div pre {
   border: 0.2vh solid #F9F9F9;
   border-radius: 0.5vh;
 }
-body footer #searchBox div:nth-of-type(2) {
+body footer #searchBox #inputSearch {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-body footer #searchBox div:nth-of-type(2) input {
+body footer #searchBox #inputSearch #search {
+  width: 4vh;
+}
+body footer #searchBox #inputSearch input {
   width: 80%;
   height: 3vh;
   border-radius: 2vh;
