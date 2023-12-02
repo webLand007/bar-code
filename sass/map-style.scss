@@ -20,6 +20,18 @@ body {
         }
     }
 
+    #divMyLocation {
+        z-index: 2;
+        position: absolute;
+        bottom: 12vh;
+        // right: 2.5vh;
+        right: 5%;
+
+        img {
+            width: 10vh;
+        }
+    }
+
     footer {
         overflow: scroll;
         position: absolute;
@@ -34,15 +46,15 @@ body {
         bottom: 4vh;
 
 
-        >div:nth-of-type(1) {
-            text-align: right;
-            width: 100%;
-            padding: 0 2vh 2vh 0;
+        // >div:nth-of-type(1) {
+        //     text-align: right;
+        //     width: 100%;
+        //     padding: 0 2vh 2vh 0;
 
-            img {
-                width: 10vh;
-            }
-        }
+        //     img {
+        //         width: 10vh;
+        //     }
+        // }
 
         label:first-of-type {
             margin-left: 50%;
@@ -113,10 +125,14 @@ body {
             }
 
 
-            div:nth-of-type(2) {
+            #inputSearch {
                 display: flex;
                 align-items: center;
                 justify-content: space-around;
+
+                #search {
+                    width: 4vh;
+                }
 
                 input {
                     width: 80%;
