@@ -687,7 +687,7 @@ function search() {
             let i;
             for (i = 0; i < data.data.count; i++) {
                 let info = data.data.items[i];
-                searchMarkers[i] = L.circle([info.location.y, info.location.x], {
+                searchMarkers[i] = L.marker([info.location.y, info.location.x], {
                     icon: greenIcon,
                     title: info.title
                 }).addTo(myMap);

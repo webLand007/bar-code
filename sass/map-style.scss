@@ -11,11 +11,18 @@ body {
         .container {
             width: 85%;
             margin: 3vh auto;
-            display: flex;
-            justify-content: space-between;
 
             img {
+                position: absolute;
                 width: 7vh;
+            }
+
+            #goToInformationPage {
+                left: 5%;
+            }
+
+            #goToHome {
+                right: 5%;
             }
         }
     }

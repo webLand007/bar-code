@@ -11,11 +11,16 @@ body header {
 body header .container {
   width: 85%;
   margin: 3vh auto;
-  display: flex;
-  justify-content: space-between;
 }
 body header .container img {
+  position: absolute;
   width: 7vh;
+}
+body header .container #goToInformationPage {
+  left: 5%;
+}
+body header .container #goToHome {
+  right: 5%;
 }
 body #divMyLocation {
   z-index: 2;
