@@ -2,9 +2,17 @@
 
 // input search in map
 var term = document.querySelector("#term")
+// icon user in header
+let goToHome = document.querySelector('#goToHome')
+// icon home in header
+let goToInformationPage = document.querySelector('#goToInformationPage')
 
 // events...
 
+// switch page map to home page
+goToHome.addEventListener('click', switchPageToHome)
+// switch page map to user-information page
+goToInformationPage.addEventListener('click', switchPageToInformationPage)
 // click by input search in map
 term.onclick = ShowTheListOfOffers
 
@@ -16,6 +24,16 @@ function ShowTheListOfOffers() {
      */
     term.value == 0 ? document.querySelector('#resualt').style.display = 'none' : search()
 
+}
+
+// switch page map to home page
+function switchPageToHome() {
+    window.location.href = '../index.html'
+}
+
+// switch page map to user-information page
+function switchPageToInformationPage() {
+    window.location.href = '../user-information-page/information page.html'
 }
 
 // functions...
@@ -354,10 +372,6 @@ customMarkers.push(L.marker([29.612711, 52.543548], {
     icon: tIcon
 })) //.bindPopup("مقابل فروشگاه سعیدیان حدفاصل کوچه ۴٩ تا ۵١")
 // location of icon + Popup
-customMarkers.push(L.marker([29.612711, 52.543548], {
-    icon: tIcon
-})) //.bindPopup("مقابل منسوجات امید حد فاصل کوچه ۴٩ تا ۵١")
-// location of icon + Popup
 customMarkers.push(L.marker([29.611785, 52.545037], {
     icon: tIcon
 })) //.bindPopup("سه راه احمدی به طرف مصدق مقابل فروشگاه لوازم خانگی سید هاشمی")
@@ -611,11 +625,13 @@ var redIcon = new L.Icon({
 function addMarkerOnMap(e) {
     // set marker on user clicked
     marker.setLatLng(e.latlng);
-    marker.bindPopup(`lat : ${e.latlng.lat} - lng : ${e.latlng.lng}`).openPopup();
+    marker.bindPopup(`lat : ${e.latlng.lat} - lng : ${e.latlng.lng}`) //.openPopup();
     // change latitude and longitude in varibles
     centerLat = e.latlng.lat;
     centerLng = e.latlng.lng;
     document.querySelector('#resualt').style.display = 'none'
+    document.querySelector('#searchBox').style.height = '6vh'
+    document.querySelector('#inputSearch').style = ' margin-bottom:0;'
 }
 
 let searchMarkers = [];
@@ -646,7 +662,20 @@ function search() {
         .then(data => {
             document.getElementById("resualt").innerHTML = "";
 
-            data.data.count != 0 ? document.querySelector('#resualt').style.display = 'flex' : document.querySelector('#resualt').style.display = 'none'
+            // If a city is not found in the search
+            // (cheange the style search box in footer)
+            if (data.data.count != 0) {
+                document.querySelector('#resualt').style.display = 'flex'
+                document.querySelector('#searchBox').style.height = '30vh'
+                document.querySelector('#inputSearch').style = ' margin-bottom: 1.5vh;'
+            } else {
+                document.querySelector('#resualt').style.display = 'none'
+                document.querySelector('#searchBox').style.height = '6vh'
+                document.querySelector('#inputSearch').style = ' margin-bottom:0;'
+            }
+
+
+            document.querySelector('#searchBox').style.marginBottom = '1.5vh'
 
             //set center of map to marker location
             console.log(data.data.count);
@@ -666,6 +695,7 @@ function search() {
         }).catch(error => {
             document.getElementById("resualt").innerHTML = "";
             document.getElementById("resualt").style.display = "none";
+            document.querySelector('#searchBox').style.height = '6vh'
             console.log(error);
         });
 
@@ -699,24 +729,26 @@ function makeDiveResualt(data, index) {
         }
         // Hide list of suggestions
         document.querySelector('#resualt').style.display = 'none'
+        document.querySelector('#searchBox').style.height = '6vh'
+        document.querySelector('#inputSearch').style = ' margin-bottom:0;'
     }
     resultDiv.dir = "ltr";
     let resultAddress = document.createElement("pre");
     resultAddress.textContent = `title : ${data.title} \n Address : ${data.address} \n type : ${data.type}`;
-    resultAddress.style = `border: solid ${generateRandomColor()};`;
+    // resultAddress.style = `border: solid ${generateRandomColor()};`;
     resultsDiv.appendChild(resultDiv);
     resultDiv.appendChild(resultAddress);
 }
 
-//random color generator :))
-function generateRandomColor() {
-    let letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+// //random color generator :))
+// function generateRandomColor() {
+//     let letters = '0123456789ABCDEF';
+//     let color = '#';
+//     for (let i = 0; i < 6; i++) {
+//         color += letters[Math.floor(Math.random() * 16)];
+//     }
+//     return color;
+// }
 
 // Red area on the map
 let polygonR = L.polygon([
