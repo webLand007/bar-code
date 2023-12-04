@@ -110,6 +110,14 @@ function errorMSG(location) {
 
 // Save user information in browser memory
 function saveInformationInLS(UserInformation) {
+    const saveModal = Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "اطلاعات شما با موفقیعت ثبت شد",
+        showConfirmButton: false,
+        timer: 1500
+    })
+
     // localStorage part
     let getInformationInLS = loadOfLS()
 
