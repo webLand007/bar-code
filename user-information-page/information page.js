@@ -110,6 +110,7 @@ function errorMSG(location) {
 
 // Save user information in browser memory
 function saveInformationInLS(UserInformation) {
+    // when usersave his information active this modal 
     const saveModal = Swal.fire({
         position: "top-end",
         icon: "success",
@@ -145,6 +146,7 @@ function loadOfLS() {
  * @param {*} e 
  */
 function signOutInAccount(e) {
+    // when user want to sign out from application active this modal
     const delteModal = Swal.fire({
         title: "ایا می خواهید خارج شوید?",
         showCancelButton: true,
