@@ -1,8 +1,66 @@
-@import "varibles";
+@import "./varibles.scss";
+@import "./mixing.scss";
 
 body {
     margin: 0;
-    background-color: #F7FCF6;
+    background-color: #fff;
+
+    .shadow-div {
+        transition: all 1s;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: radial-gradient(97.1% 56.69% at 50% 48.19%, #DFDFDF 0%, rgba(255, 255, 255, 0.00) 100%);
+        backdrop-filter: blur(2px);
+        @include flex-box(flex, column, nowrap, center, center, center);
+
+        .signOut {
+            padding: 20px;
+            border-radius: 10px;
+            background: #FFF;
+            box-shadow: 0px 0px 20.4px 0px rgba(75, 75, 75, 0.33);
+            width: 70%;
+            @include flex-box(flex, column, nowrap, center, center, center);
+
+            .msg {
+                p {
+                    color: #9C9C9C;
+                    font-size: 3vh;
+                    font-weight: 700;
+                    letter-spacing: 0.315px;
+                }
+            }
+
+            .target-choose {
+                width: 100%;
+                @include flex-box(flex, row, nowrap, center, space-around, center);
+
+                button {
+                    font-size: 2.5vh;
+                    padding: 10px 35px;
+                    border-radius: 5px;
+                    border: 1px solid #D8D8D8;
+                    background: rgba(241, 61, 61, 0.05);
+                    font-weight: 700;
+                }
+
+                div:first-of-type {
+                    button {
+                        color: $redFont;
+                    }
+                }
+
+                div:last-of-type {
+                    button {
+                        color: $greenFont;
+                    }
+                }
+            }
+        }
+    }
 
     header {
         width: 100%;
@@ -11,13 +69,14 @@ body {
         .container {
             width: 90%;
             margin: 0 auto;
+            @include flex-box(flex, row, nowrap, center, space-between, center);
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 10vh;
 
             >div:nth-of-type(2) {
-                margin-right: 10vh;
+                margin-right: 25px;
 
                 span {
                     font-size: 3vh;
@@ -39,52 +98,88 @@ body {
     }
 
     main {
+        height: 80vh;
+
         form {
             width: 90%;
+            height: 100%;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex-box(flex, column, nowrap, center, space-between, center);
 
-            img {
-                margin: 3vh auto;
+            .content {
+                width: 100%;
+                @include flex-box(flex, column, nowrap, center, center, center);
+
+                img {
+                    margin: 3vh auto;
+                    width: 25%;
+                }
+
+                input {
+                    width: 90%;
+                    height: 4vh;
+                    border: none;
+                    border-radius: 1vh;
+                    padding: 8px;
+                    font-size: 2vh;
+                    margin: 10vh 0 2vh 0;
+                    background-color: #EAEAEA;
+                    color: #939393;
+                }
+
+                input:nth-of-type(2) {
+                    margin: 2vh 0 0 0;
+                }
+
+                input:focus {
+                    outline: 1px solid #635e5e;
+                }
             }
 
-            input {
-                width: 90%;
-                height: 4vh;
 
-                border: none;
-                border-radius: 1vh;
+            .save-user {
+                width: 100%;
+                margin: 0px auto;
+                @include flex-box(flex, row, nowrap, center, center, center);
 
-                padding: 0 2vh 0;
-                font-size: 2vh;
-                margin: 10vh 0 2vh 0;
+                button[type=submit] {
+                    margin: 5% auto;
+                    padding: 1vh 10vh;
+                    background-color: #63AF35;
+                    border: none;
+                    border-radius: 1vh;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 3vh;
+                }
 
-                background-color: #ffffff;
-                color: #939393;
+
             }
 
-            input:nth-of-type(2) {
-                margin: 2vh 0 0 0;
-            }
-
-            button[type=submit] {
-                margin: 0 auto;
-                padding: 1vh 10vh;
-                background-color: #63AF35;
-                border: none;
-                border-radius: 1vh;
-                color: white;
-                font-weight: bold;
-                font-size: 3vh;
-                position: absolute;
-                bottom: 10vh;
-            }
-
-            p {
-                color: red;
-            }
         }
     }
+}
+
+@keyframes save {
+    from {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
+
 }
