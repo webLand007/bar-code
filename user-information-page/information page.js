@@ -137,19 +137,32 @@ function loadOfLS() {
  * @param {*} e 
  */
 function signOutInAccount(e) {
-    body.insertAdjacentHTML("afterbegin", signOutModal("خارج می شوید؟"))
-    const yes = document.querySelector(".yes")
-    const no = document.querySelector(".no")
+    const delteModal = Swal.fire({
+        title: "ایا می خواهید خارج شوید?",
+        showCancelButton: true,
+        confirmButtonColor: "#E26E6E",
+        cancelButtonColor: "#31C952",
+        confirmButtonText: "بله",
+        cancelButtonText: "خیر",
 
-    yes.addEventListener("click", removeInformation)
-    no.addEventListener("click", cancelDelet)
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "با موفیعت خارج شدید",
+                showConfirmButton: false,
+                timer: 1500
+            })
+            removeInformation();
+        }
+    });
 }
 // When logging out of the user account
 // 1 = Delete data from dom
 // 2 = Delete data from local storage
 function removeInformation() {
     // style
-    document.querySelector(".shadow-div").style.display = "none"
     let UserInformation = {
         fullName: null,
         phonNumber: null
