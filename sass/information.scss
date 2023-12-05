@@ -18,6 +18,7 @@ body {
         @include flex-box(flex, column, nowrap, center, center, center);
 
         .signOut {
+
             padding: 20px;
             border-radius: 10px;
             background: #FFF;

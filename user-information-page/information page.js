@@ -146,27 +146,50 @@ function loadOfLS() {
  * @param {*} e 
  */
 function signOutInAccount(e) {
-    // when user want to sign out from application active this modal
-    const delteModal = Swal.fire({
-        title: "ایا می خواهید خارج شوید?",
-        showCancelButton: true,
-        confirmButtonColor: "#E26E6E",
-        cancelButtonColor: "#31C952",
-        confirmButtonText: "بله",
-        cancelButtonText: "خیر",
+    // if inputs be empty then show this modal
+    if (!phonNumber.value && !fullName.value) {
+        Swal.fire({
+            text: "شما حساب فعال ندارید",
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+        });
+    } else {
+        // when user want to sign out from application active this modal
+        const delteModal = Swal.fire({
+            title: "ایا می خواهید خارج شوید?",
+            showCancelButton: true,
+            confirmButtonColor: "#E26E6E",
+            cancelButtonColor: "#31C952",
+            confirmButtonText: "بله",
+            cancelButtonText: "خیر",
 
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire({
-                position: "top-end",
-                icon: "success",
-                title: "با موفیعت خارج شدید",
-                showConfirmButton: false,
-                timer: 1500
-            })
-            removeInformation();
-        }
-    });
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "با موفیعت خارج شدید",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                removeInformation();
+            }
+        });
+
+    }
+
 }
 // When logging out of the user account
 // 1 = Delete data from dom
