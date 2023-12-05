@@ -124,7 +124,7 @@ body #footerMain #container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 0.1vh solid #797979;
+  border: 1px solid #ECECEC;
 }
 body #footerMain #container div {
   margin: 0 3vh;
