@@ -158,24 +158,14 @@ body main form .save-user button[type=submit] {
   font-weight: bold;
   font-size: 3vh;
 }
-
-@keyframes save {
-  from {
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  99% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
-    display: none;
-  }
+body .swal2-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 /*# sourceMappingURL=information.css.map */
