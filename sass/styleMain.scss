@@ -1,5 +1,12 @@
+@import "../sass/varibles.scss";
+
 body {
+    font-family: iran-sans;
     background-color: #FDFDFD;
+
+    header {
+        font-family: iran-sans-bold;
+    }
 
     #headerMain {
         width: 100%;

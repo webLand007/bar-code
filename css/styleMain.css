@@ -1,5 +1,17 @@
+@font-face {
+  font-family: iran-sans-bold;
+  src: url(../css/BTitrBd.ttf);
+}
+@font-face {
+  font-family: iran-sans;
+  src: url(../css/BTraffic.ttf);
+}
 body {
+  font-family: iran-sans;
   background-color: #FDFDFD;
+}
+body header {
+  font-family: iran-sans-bold;
 }
 body #headerMain {
   width: 100%;

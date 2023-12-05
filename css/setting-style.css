@@ -1,13 +1,21 @@
 @font-face {
-  font-family: persianFont;
-  src: url(BTraffic.ttf);
+  font-family: iran-sans-bold;
+  src: url(../css/BTitrBd.ttf);
+}
+@font-face {
+  font-family: iran-sans;
+  src: url(../css/BTraffic.ttf);
 }
 body {
   background-color: #F2F2F2;
-  font-family: persianFont;
+  font-family: iran-sans;
+  font-size: 2vh;
+}
+body header {
+  font-family: iran-sans-bold;
 }
 body header div {
-  justify-self: center;
+  justify-content: flex-end;
   border-bottom: 1px solid #535353;
 }
 body header div h3 {
@@ -25,7 +33,8 @@ body main .headerMain {
   padding: 5px 0px 5px 0px;
 }
 body main .headerMain h4 {
-  font-weight: 700;
+  font-family: iran-sans-bold;
+  font-size: 3vh;
 }
 body main .headerMain div:last-of-type {
   position: relative;
@@ -42,7 +51,7 @@ body main .information {
   font-weight: 600;
 }
 body main .information .settingOption {
-  border-bottom: 1px solid #B3B3B3;
+  border-bottom: 0.2vh solid #B3B3B3;
   padding: 0px;
 }
 body main .information .settingOption div:last-of-type {
@@ -51,4 +60,4 @@ body main .information .settingOption div:last-of-type {
   justify-content: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=setting-style.css.map */
