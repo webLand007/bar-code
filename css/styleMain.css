@@ -50,7 +50,7 @@ body #OptionsSectionMain {
   border-radius: 2vh;
   display: flex;
   flex-wrap: wrap;
-  padding: 1vh;
+  padding: 1vh 0;
   border: 0.2vh solid #FFE2BF;
   background: rgba(255, 205, 145, 0);
   box-shadow: 0px 0px 11.9px 0px #FFE1BC;
@@ -78,7 +78,7 @@ body #OptionsSectionMain > div img {
 body #slider {
   width: 90%;
   direction: ltr;
-  margin: 2vh auto 0;
+  margin: 2vh auto;
 }
 body #slider .item {
   width: 100%;
@@ -87,6 +87,9 @@ body #slider .item {
 body #slider .item img {
   width: 100% !important;
   height: 100% !important;
+}
+body #slider .owl-dots button span {
+  margin: 5px 3px;
 }
 body #footerMain {
   width: 100%;
