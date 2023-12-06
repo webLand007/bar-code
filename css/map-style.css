@@ -87,8 +87,11 @@ body footer #searchBox #resualt {
 }
 body footer #searchBox #resualt > div {
   width: 100%;
-  margin: 1vh auto 0;
-  height: 5.5vh;
+  margin: 5px auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2px;
 }
 body footer #searchBox #resualt > div pre {
   width: 90%;
@@ -98,6 +101,16 @@ body footer #searchBox #resualt > div pre {
   background-color: #DDDDDD;
   border: 0.2vh solid #F9F9F9;
   border-radius: 0.5vh;
+}
+body footer #searchBox #resualt > div pre div {
+  text-align: end;
+  margin: 3px;
+  width: 100%;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
 }
 body footer #searchBox #inputSearch {
   display: flex;

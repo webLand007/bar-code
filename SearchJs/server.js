@@ -712,6 +712,7 @@ function search() {
  * @param {number} index - each div of user target address has number(number are index of array)
  */
 function makeDiveResualt(data, index) {
+    console.log(data.title)
     const resultsDiv = document.getElementById("resualt");
     const resultDiv = document.createElement("div");
     // active function when user click on one address
@@ -738,11 +739,16 @@ function makeDiveResualt(data, index) {
         document.querySelector('#inputSearch').style = ' margin-bottom:0;'
     }
     resultDiv.dir = "ltr";
-    let resultAddress = document.createElement("pre");
-    resultAddress.textContent = `title : ${data.title} \n Address : ${data.address} \n type : ${data.type}`;
+    let location = document.createElement("pre");
+    let resultTilte = document.createElement("div");
+    let resultAddress = document.createElement("div");
+    resultTilte.textContent = data.title
+    resultAddress.textContent = data.address
     // resultAddress.style = `border: solid ${generateRandomColor()};`;
+    location.appendChild(resultAddress);
+    location.appendChild(resultTilte);
+    resultDiv.appendChild(location);
     resultsDiv.appendChild(resultDiv);
-    resultDiv.appendChild(resultAddress);
 }
 
 // //random color generator :))

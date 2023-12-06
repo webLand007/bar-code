@@ -1,3 +1,5 @@
+@import "varibles";
+
 body {
     margin: 0;
     display: flex;
@@ -116,8 +118,12 @@ body {
 
                 >div {
                     width: 100%;
-                    margin: 1vh auto 0;
-                    height: 5.5vh;
+                    margin: 5px auto;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    padding: 2px;
+
 
                     pre {
                         width: 90%;
@@ -127,6 +133,17 @@ body {
                         background-color: #DDDDDD;
                         border: 0.2vh solid #F9F9F9;
                         border-radius: 0.5vh;
+
+                        div {
+                            text-align: end;
+                            margin: 3px;
+                            width: 100%;
+                            white-space: pre-wrap;
+                            white-space: -moz-pre-wrap;
+                            white-space: -pre-wrap;
+                            white-space: -o-pre-wrap;
+                            word-wrap: break-word;
+                        }
                     }
                 }
             }
