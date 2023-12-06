@@ -134,7 +134,16 @@ body #map {
   position: absolute;
   z-index: 1;
 }
-body .leaflet-control-container {
+
+.leaflet-container > div:nth-of-type(3) {
+  display: none;
+}
+
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-control-zoom {
   display: none;
 }
 

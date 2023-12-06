@@ -176,8 +176,18 @@ body {
         position: absolute;
         z-index: 1;
     }
+}
 
-    .leaflet-control-container {
-        display: none;
+.leaflet-container {
+    >div:nth-of-type(3) {
+        display: none
     }
+}
+
+.leaflet-control-attribution {
+    display: none
+}
+
+.leaflet-control-zoom {
+    display: none
 }
