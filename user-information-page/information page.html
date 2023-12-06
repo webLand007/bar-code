@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INFORMATION PAGE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="../css/information.css">
 </head>
 
@@ -19,24 +20,29 @@
                 <span>اطلاعات کاربر</span>
             </div>
             <div>
-                <span id="signOut">خروج از حساب</span>
+                <span id="signOut">خروج </span>
             </div>
         </div>
     </header>
 
     <main>
         <form id="form-information">
-            <img src="../image/User-photo.svg" alt="">
+            <div class="content">
+                <img src="../image/User-photo.svg" alt="">
 
-            <input id="fullName" placeholder="نام و نام خانوادگی" type="text">
+                <input id="fullName" placeholder="نام و نام خانوادگی" type="text">
 
-            <input id="phonNumber" placeholder="شماره موبایل" type="text">
+                <input id="phonNumber" placeholder="شماره موبایل" type="text">
+            </div>
 
-            <button type="submit">ذخیره</button>
+            <div class="save-user">
+                <button type="submit">ذخیره</button>
+            </div>
+
         </form>
     </main>
-
-    <script src="information page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="information page.js"></script>
 </body>
 
 </html>

@@ -12,6 +12,7 @@ let signOut = document.querySelector('#signOut')
 //
 let backToPageSetting = document.querySelector('#backToPageSetting')
 
+let body = document.querySelector("body")
 
 
 
@@ -109,6 +110,16 @@ function errorMSG(location) {
 
 // Save user information in browser memory
 function saveInformationInLS(UserInformation) {
+    // when usersave his information active this modal 
+    const saveModal = Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "اطلاعات شما با موفقیعت ثبت شد",
+        showConfirmButton: false,
+        timer: 1500
+    })
+
+    // localStorage part
     let getInformationInLS = loadOfLS()
 
     getInformationInLS = JSON.stringify(UserInformation)
@@ -129,10 +140,62 @@ function loadOfLS() {
     return LSNotes
 }
 
+/**
+ * show modal
+ * then make addEventListener for remove or not remove account
+ * @param {*} e 
+ */
+function signOutInAccount(e) {
+    // if inputs be empty then show this modal
+    if (!phonNumber.value && !fullName.value) {
+        Swal.fire({
+            text: "شما حساب فعال ندارید",
+            showClass: {
+                popup: `
+                animate__animated
+                animate__fadeInUp
+                animate__faster
+              `
+            },
+            hideClass: {
+                popup: `
+                animate__animated
+                animate__fadeOutDown
+                animate__faster
+              `
+            }
+        });
+    } else {
+        // when user want to sign out from application active this modal
+        const delteModal = Swal.fire({
+            title: "ایا می خواهید خارج شوید?",
+            showCancelButton: true,
+            confirmButtonColor: "#E26E6E",
+            cancelButtonColor: "#31C952",
+            confirmButtonText: "بله",
+            cancelButtonText: "خیر",
+
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "با موفیعت خارج شدید",
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                removeInformation();
+            }
+        });
+
+    }
+
+}
 // When logging out of the user account
 // 1 = Delete data from dom
 // 2 = Delete data from local storage
-function signOutInAccount() {
+function removeInformation() {
+    // style
     let UserInformation = {
         fullName: null,
         phonNumber: null
@@ -145,7 +208,6 @@ function signOutInAccount() {
     // remove information from the DOM
     showAndHideInformationPerson(false)
 }
-
 // true = show Information from local storage
 // false = remove Information in input
 function showAndHideInformationPerson(info) {
@@ -163,6 +225,27 @@ function showAndHideInformationPerson(info) {
     }
 }
 
+function cancelDelet() {
+    document.querySelector(".shadow-div").style.display = "none"
+
+}
+
 function switchPageToSetting() {
     window.location.href = "../setting page/setting.html"
+}
+
+function signOutModal(massage) {
+    return `<div class="shadow-div">
+    <div class="signOut">
+        <div class="msg">
+            <p>${massage}</p>
+        </div>
+        <div class="target-choose">
+            <div><button class="yes">بله</button></div>
+            <div><button class="no">خیر</button></div>
+        </div>
+    </div>
+</div>`
+
+
 }

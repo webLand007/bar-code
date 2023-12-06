@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../sass/about.scss","../sass/varibles.scss"],"names":[],"mappings":"AAEA;EACI,eCDY;;;ADMR;EACI;;AAKJ;EACI,OCfE;EDgBF,aCbE;;ADgBN;EACI,OCnBC;EDoBD,aCjBM","file":"about.css"}
+{"version":3,"sourceRoot":"","sources":["../sass/varibles.scss","../sass/about.scss"],"names":[],"mappings":"AAAA;EACI;EACA;;AAGJ;EACI;EACA;;ACLJ;EACI;;AAGA;EACI;EACA,eDKQ;;ACAJ;EACI;;AAKJ;EACI,ODTF;ECUE,aDJF;;ACOF;EACI,ODbH;ECcG,aDRE","file":"about.css"}

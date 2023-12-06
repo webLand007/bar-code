@@ -1,8 +1,18 @@
+@font-face {
+  font-family: iran-sans-bold;
+  src: url(../css/BTitrBd.ttf);
+}
+@font-face {
+  font-family: iran-sans;
+  src: url(../css/BTraffic.ttf);
+}
 body {
+  font-family: iran-sans;
   margin: 0;
-  background-color: #F7FCF6;
+  background-color: #fff;
 }
 body header {
+  font-family: iran-sans-bold;
   width: 100%;
   border-bottom: 0.2vh solid #B3B3B3;
 }
@@ -10,12 +20,18 @@ body header .container {
   width: 90%;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   height: 10vh;
 }
 body header .container > div:nth-of-type(2) {
-  margin-right: 10vh;
+  margin-right: 25px;
 }
 body header .container > div:nth-of-type(2) span {
   font-size: 3vh;
@@ -29,32 +45,62 @@ body header .container > div:nth-of-type(3) span {
   border-radius: 1.5vh;
   padding: 1vh;
 }
+body main {
+  height: 80vh;
+}
 body main form {
   width: 90%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
   align-items: center;
 }
-body main form img {
-  margin: 3vh auto;
+body main form .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-body main form input {
+body main form .content img {
+  margin: 3vh auto;
+  width: 25%;
+}
+body main form .content input {
   width: 90%;
   height: 4vh;
   border: none;
   border-radius: 1vh;
-  padding: 0 2vh 0;
+  padding: 8px;
   font-size: 2vh;
   margin: 10vh 0 2vh 0;
-  background-color: #ffffff;
+  background-color: #EAEAEA;
   color: #939393;
 }
-body main form input:nth-of-type(2) {
+body main form .content input:nth-of-type(2) {
   margin: 2vh 0 0 0;
 }
-body main form button[type=submit] {
-  margin: 0 auto;
+body main form .content input:focus {
+  outline: 1px solid #635e5e;
+}
+body main form .save-user {
+  width: 100%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+body main form .save-user button[type=submit] {
+  margin: 5% auto;
   padding: 1vh 10vh;
   background-color: #63AF35;
   border: none;
@@ -62,11 +108,15 @@ body main form button[type=submit] {
   color: white;
   font-weight: bold;
   font-size: 3vh;
-  position: absolute;
-  bottom: 10vh;
 }
-body main form p {
-  color: red;
+body .swal2-actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 /*# sourceMappingURL=information.css.map */
