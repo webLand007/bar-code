@@ -176,7 +176,7 @@ function signOutInAccount(e) {
             cancelButtonText: "بله",
 
         }).then((result) => {
-            if (!result.isConfirmed) {
+            if (result.dismiss == "cancel") {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
