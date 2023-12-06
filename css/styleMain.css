@@ -109,7 +109,9 @@ body #slider .item img {
   width: 100% !important;
   height: 100% !important;
 }
-
+body #slider .owl-dots button span {
+  margin: 5px 3px;
+}
 body #qrCode {
   display: none;
   position: absolute;
@@ -127,10 +129,6 @@ body #qrCode h3 {
 body #qrCode img {
   width: 80%;
   margin: 0 auto;
-
-body #slider .owl-dots button span {
-  margin: 5px 3px;
-
 }
 body #footerMain {
   width: 100%;
