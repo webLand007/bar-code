@@ -118,17 +118,17 @@ body #qrCode {
   position: absolute;
   left: 0;
   right: 0;
-  top: 25vh;
+  top: 20vh;
   flex-direction: column;
   align-items: center;
 }
 body #qrCode h3 {
   color: #ACACAC;
-  font-size: 3vh;
+  font-size: 2.5vh;
   font-weight: bold;
 }
 body #qrCode img {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
 }
 body #footerMain {
