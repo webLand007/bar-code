@@ -133,6 +133,7 @@ body #qrCode img {
 }
 body #footerMain {
   width: 100%;
+  height: 13vh;
   position: fixed;
   bottom: 0vh;
   right: 0;
@@ -146,13 +147,14 @@ body #footerMain {
 }
 body #footerMain #container {
   width: 100%;
-  height: 13vh;
+  height: 100%;
   margin: 0 auto;
   border-radius: 1vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: 1px solid #ECECEC;
+  border-bottom: none;
 }
 body #footerMain #container div {
   margin: 0 4vh;

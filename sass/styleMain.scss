@@ -160,6 +160,7 @@ body {
 
     #footerMain {
         width: 100%;
+        height: 13vh;
         position: fixed;
         bottom: 0vh;
         right: 0;
@@ -174,13 +175,14 @@ body {
 
         #container {
             width: 100%;
-            height: 13vh;
+            height: 100%;
             margin: 0 auto;
             border-radius: 1vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border: 1px solid #ECECEC;
+            border-bottom: none;
 
             // >div {
             //     display: flex;
