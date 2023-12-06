@@ -629,7 +629,7 @@ function addMarkerOnMap(e) {
     marker.addTo(myMap);
     // set marker on user clicked
     marker.setLatLng(e.latlng);
-    marker.bindPopup(`lat : ${e.latlng.lat} - lng : ${e.latlng.lng}`) //.openPopup();
+    //marker.bindPopup(`lat : ${e.latlng.lat} - lng : ${e.latlng.lng}`) //.openPopup();
     // change latitude and longitude in varibles
     centerLat = e.latlng.lat;
     centerLng = e.latlng.lng;
