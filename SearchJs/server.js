@@ -572,13 +572,17 @@ myMap.on("zoom", () => {
 })
 
 
+//adding the marker to map => base marker
+let marker = L.marker([29.606446174640958, 52.53792787943611])
+let centerLat = " 29.606446174640958";
+let centerLng = " 52.53792787943611";
 
 // get and show user location
 function whereAmI() {
     // if user Devise suports geo location
     const successCallback = (position) => {
         // set marker position
-        marker.setLatLng([position.coords.latitude, position.coords.longitude]);
+        marker.setLatLng([position.coords.latitude, position.coords.longitude]).addTo(myMap);;
         // change value of location
         centerLat = position.coords.latitude, position;
         centerLng = position.coords.longitude;
@@ -616,10 +620,6 @@ var redIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-//adding the marker to map => base marker
-let marker = L.marker([29.606446174640958, 52.53792787943611])
-let centerLat = " 29.606446174640958";
-let centerLng = " 52.53792787943611";
 
 /**
  * 
