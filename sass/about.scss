@@ -1,25 +1,31 @@
 @import "varibles";
 
-header {
-    border-bottom: $borderBottom;
-}
+body {
+    font-family: iran-sans;
 
-main {
-    .imgDiv {
-        img {
-            margin: 0 auto;
-        }
+
+    header {
+        font-family: iran-sans-bold;
+        border-bottom: $borderBottom;
     }
 
-    .about {
-        h3 {
-            color: $titleColor;
-            font-weight: $fontWeight;
+    main {
+        .imgDiv {
+            img {
+                margin: 0 auto;
+            }
         }
 
-        p {
-            color: $textColor;
-            font-weight: $textFontWeight;
+        .about {
+            h3 {
+                color: $titleColor;
+                font-weight: $fontWeight;
+            }
+
+            p {
+                color: $textColor;
+                font-weight: $textFontWeight;
+            }
         }
     }
 }

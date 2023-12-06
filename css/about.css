@@ -1,15 +1,26 @@
-header {
-  border-bottom: 1px solid #B3B3B3;
+@font-face {
+  font-family: iran-sans-bold;
+  src: url(../css/BTitrBd.ttf);
 }
-
-main .imgDiv img {
+@font-face {
+  font-family: iran-sans;
+  src: url(../css/BTraffic.ttf);
+}
+body {
+  font-family: iran-sans;
+}
+body header {
+  font-family: iran-sans-bold;
+  border-bottom: 0.2vh solid #B3B3B3;
+}
+body main .imgDiv img {
   margin: 0 auto;
 }
-main .about h3 {
+body main .about h3 {
   color: #01579B;
   font-weight: 700;
 }
-main .about p {
+body main .about p {
   color: #232323;
   font-weight: 400;
 }

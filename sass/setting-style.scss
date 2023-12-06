@@ -1,17 +1,15 @@
-@import "varibles";
-
-@font-face {
-    font-family: persianFont;
-    src: url(BTraffic.ttf);
-}
+@import "./varibles.scss";
 
 body {
     background-color: #F2F2F2;
-    font-family: persianFont;
+    font-family: iran-sans;
+    font-size: 2vh;
 
     header {
+        font-family: iran-sans-bold;
+
         div {
-            justify-self: center;
+            justify-content: flex-end;
             border-bottom: 1px solid #535353;
 
             h3 {
@@ -32,8 +30,11 @@ body {
             align-items: center;
             padding: 5px 0px 5px 0px;
 
+
             h4 {
-                font-weight: 700;
+                font-family: iran-sans-bold;
+                // font-weight: 700;
+                font-size: 3vh;
             }
 
             div:last-of-type {
