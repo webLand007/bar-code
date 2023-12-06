@@ -587,7 +587,7 @@ function whereAmI() {
         centerLat = position.coords.latitude, position;
         centerLng = position.coords.longitude;
         // add Popun for marker position
-        marker.bindPopup(`lat : ${position.coords.latitude} - lng : ${position.coords.longitude}`) //.openPopup();
+        // marker.bindPopup(`lat : ${position.coords.latitude} - lng : ${position.coords.longitude}`) //.openPopup();
         // change map position
         myMap.flyTo([centerLat, centerLng], 12);
     };
