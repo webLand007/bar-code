@@ -37,8 +37,9 @@ body #headerMain #header-top * {
   margin: 0 2vh;
 }
 body #headerMain #header-main {
-  width: 100%;
+  width: 95%;
   height: 8vh;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,6 +55,15 @@ body #headerMain #header-main div span {
 }
 body #headerMain #header-main > div {
   margin: 0 4vh;
+}
+body #headerMain #header-main #icon-home,
+body #headerMain #header-main #mobile-QR-active {
+  display: none;
+}
+body #headerMain #header-main #icon-home-active,
+body #headerMain #header-main #mobile-QR-active {
+  border-bottom: 0.3vh solid #707070;
+  padding: 1vh 0;
 }
 body #OptionsSectionMain {
   width: 90%;
@@ -103,6 +113,24 @@ body #slider .item img {
 body #slider .owl-dots button span {
   margin: 5px 3px;
 }
+body #qrCode {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25vh;
+  flex-direction: column;
+  align-items: center;
+}
+body #qrCode h3 {
+  color: #ACACAC;
+  font-size: 3vh;
+  font-weight: bold;
+}
+body #qrCode img {
+  width: 80%;
+  margin: 0 auto;
+}
 body #footerMain {
   width: 100%;
   position: fixed;
@@ -117,7 +145,7 @@ body #footerMain {
   box-shadow: 0px -5px 8.2px 0px rgba(0, 0, 0, 0.05);
 }
 body #footerMain #container {
-  width: 100%;
+  width: 95%;
   height: 13vh;
   margin: 0 auto;
   border-radius: 1vh;
