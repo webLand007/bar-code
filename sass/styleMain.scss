@@ -51,6 +51,17 @@ body {
             >div {
                 margin: 0 4vh;
             }
+
+            #icon-home,
+            #mobile-QR-active {
+                display: none;
+            }
+
+            #icon-home-active,
+            #mobile-QR-active {
+                border-bottom: 0.3vh solid #707070;
+                padding: 1vh 0;
+            }
         }
 
     }
@@ -106,6 +117,26 @@ body {
                 width: 100% !important;
                 height: 100% !important;
             }
+        }
+    }
+
+    #qrCode {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 25vh;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            color: #707070;
+        }
+
+        img {
+            width: 80%;
+            margin: 0 auto;
+
         }
     }
 
