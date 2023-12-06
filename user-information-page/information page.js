@@ -168,15 +168,15 @@ function signOutInAccount(e) {
     } else {
         // when user want to sign out from application active this modal
         const delteModal = Swal.fire({
-            title: "ایا می خواهید خارج شوید?",
+            title: "ایا می خواهید خارج شوید؟",
             showCancelButton: true,
-            confirmButtonColor: "#E26E6E",
-            cancelButtonColor: "#31C952",
-            confirmButtonText: "بله",
-            cancelButtonText: "خیر",
+            confirmButtonColor: "rgba(49, 201, 82, 0.07)",
+            cancelButtonColor: "rgba(241, 61, 61, 0.05)",
+            confirmButtonText: "خیر",
+            cancelButtonText: "بله",
 
         }).then((result) => {
-            if (result.isConfirmed) {
+            if (!result.isConfirmed) {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -246,6 +246,4 @@ function signOutModal(massage) {
         </div>
     </div>
 </div>`
-
-
 }

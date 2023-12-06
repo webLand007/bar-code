@@ -116,7 +116,19 @@ body .swal2-actions {
   align-items: center;
   justify-content: space-around;
   align-items: center;
+  flex-direction: row-reverse;
   width: 100%;
+}
+body .swal2-actions button {
+  font-weight: bold;
+  font-size: 3vh;
+  padding: 1vh 4vh;
+}
+body .swal2-actions button:nth-of-type(1) {
+  color: #31C952;
+}
+body .swal2-actions button:nth-of-type(3) {
+  color: #E26E6E;
 }
 
 /*# sourceMappingURL=information.css.map */
