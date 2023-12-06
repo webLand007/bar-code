@@ -48,10 +48,7 @@ let myMap = new L.Map('map', {
     zoom: 14,
 });
 
-//adding the marker to map => base marker
-let marker = L.marker([29.606446174640958, 52.53792787943611]).addTo(myMap);
-let centerLat = " 29.606446174640958";
-let centerLng = " 52.53792787943611";
+
 
 // location of Shiraz cargo terminal => show it with marker
 const LeafIcon = L.Icon.extend({
@@ -619,12 +616,17 @@ var redIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
+//adding the marker to map => base marker
+let marker = L.marker([29.606446174640958, 52.53792787943611])
+let centerLat = " 29.606446174640958";
+let centerLng = " 52.53792787943611";
 
 /**
  * 
  * @param {*} e - defualt param for find user location
  */
 function addMarkerOnMap(e) {
+    marker.addTo(myMap);
     // set marker on user clicked
     marker.setLatLng(e.latlng);
     marker.bindPopup(`lat : ${e.latlng.lat} - lng : ${e.latlng.lng}`) //.openPopup();
@@ -728,6 +730,7 @@ function makeDiveResualt(data, index) {
             }
             // remove extra markers (greenn  markers)
             searchMarkers[i].remove(greenIcon);
+
         }
         // Hide list of suggestions
         document.querySelector('#resualt').style.display = 'none'
