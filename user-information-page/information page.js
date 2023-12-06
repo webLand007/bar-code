@@ -180,7 +180,7 @@ function signOutInAccount(e) {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: "با موفیعت خارج شدید",
+                    title: "با موفقیعت خارج شدید",
                     showConfirmButton: false,
                     timer: 1500
                 })
