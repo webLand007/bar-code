@@ -3,6 +3,7 @@
 body {
     font-family: iran-sans;
     background-color: #FDFDFD;
+    margin: 0;
 
     header {
         font-family: iran-sans-bold;
@@ -210,6 +211,21 @@ body {
             width: 100%;
             height: 10vh;
             background: linear-gradient(0deg, #719FF4 0%, rgba(189, 209, 248, 0.54) 49.39%, rgba(239, 239, 239, 0.00) 100%);
+        }
+    }
+
+    #loading-page {
+        background: linear-gradient(163deg, #79A4F5 47.08%, #DCE4F4 138.52%);
+        width: 100%;
+        height: 100vh;
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 30%;
+            height: 14vh;
+            border-radius: 30px 0;
         }
     }
 
