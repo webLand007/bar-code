@@ -7,12 +7,36 @@ let mobileQRActive = document.querySelector('#mobile-QR-active')
 let OptionsSectionMain = document.querySelector('#OptionsSectionMain')
 let slider = document.querySelector('#slider')
 let qrCode = document.querySelector('#qrCode')
+let loadingPage = document.querySelector('#loading-page')
+let headerMain = document.querySelector('#headerMain')
+let footerMain = document.querySelector('#footerMain')
+
+
 
 document.addEventListener('DOMContentLoaded', nextSlide)
+document.addEventListener('DOMContentLoaded', loading)
 mapIcon.addEventListener('click', switchPageToMap)
 goToPageSetting.addEventListener('click', switchPageToSetting)
 iconHome.addEventListener('click', switchValueMainToQrCode)
 mobileQR.addEventListener('click', switchValueMainToOptionAndSlider)
+
+// At the time of close from the loading-page in local storage, it should be equal to false
+window.onbeforeunload = function () {
+    localStorage.setItem('loading-page', 'false')
+}
+
+// show loading page
+function loading() {
+    let info = localStorage.getItem('loading-page')
+    info = JSON.parse(info)
+
+    // ahow loading page
+    showAndHideLoading(info)
+    // hide loading page
+    setTimeout(() => {
+        showAndHideLoading(true)
+    }, 2000);
+}
 
 // by click in mapIcon btn switch Page To Map
 function switchPageToMap() {
@@ -46,6 +70,25 @@ function switchValueMainToOptionAndSlider() {
 
 }
 
+// show and hide for loading page
+function showAndHideLoading(info) {
+    switch (info) {
+        case true:
+            headerMain.style.display = 'inline-block'
+            OptionsSectionMain.style.display = 'flex'
+            slider.style.display = 'flex'
+            footerMain.style.display = 'flex'
+            loadingPage.style.display = 'none'
+            break;
+        case false:
+            headerMain.style.display = 'none'
+            OptionsSectionMain.style.display = 'none'
+            slider.style.display = 'none'
+            footerMain.style.display = 'none'
+            loadingPage.style.display = 'flex'
+            break;
+    }
+}
 
 $('.owl-carousel').owlCarousel({
     loop: true,

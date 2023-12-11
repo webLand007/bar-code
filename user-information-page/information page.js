@@ -24,9 +24,12 @@ formInformation.addEventListener('submit', saveValueInformation)
 signOut.addEventListener('click', signOutInAccount)
 // show information in form
 document.addEventListener('DOMContentLoaded', loadInformationAccount)
-//
-backToPageSetting.addEventListener('click', switchPageToSetting)
 
+// At the time of entering the loading - page in the local storage, it should be equal to true
+backToPageSetting.addEventListener('click', switchPageToSetting)
+window.addEventListener('DOMContentLoaded', () => {
+    localStorage.setItem('loading-page', 'true')
+})
 // Functions
 
 
@@ -40,8 +43,6 @@ function loadInformationAccount() {
     if (loadLS == null) {
         // create new key in local storage with name (information)
         loadOfLS()
-        // Creating a template in local storage to enter user information
-        signOutInAccount()
     } else {
         // Calling the function to display user information
         showAndHideInformationPerson(true)
