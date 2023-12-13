@@ -66,6 +66,9 @@ body #headerMain #header-main #mobile-QR-active {
   border-bottom: 0.3vh solid #707070;
   padding: 1vh 0;
 }
+body #main {
+  width: 100%;
+}
 body #OptionsSectionMain {
   width: 90%;
   height: 26vh;

@@ -25,6 +25,8 @@ window.onbeforeunload = function () {
     localStorage.setItem('loading-page', 'false')
 }
 
+
+
 // show loading page
 function loading() {
     let info = localStorage.getItem('loading-page')
@@ -43,14 +45,15 @@ function switchPageToMap() {
     window.location.href = 'SearchJs/index.html'
 }
 
-function switchPageToSetting() {
+function switchPageToSetting(e) {
+    // window.history.pushState(state, title, url);
     window.location.href = "setting page/setting.html"
 }
 
 // by click in QR-Code btn switch Page To QR code
 function switchValueMainToQrCode() {
-    OptionsSectionMain.style.display = 'flex'
-    slider.style.display = 'flex'
+    // OptionsSectionMain.style.display = 'flex'
+    // slider.style.display = 'flex'
     mobileQR.style.display = 'flex'
     iconHomeActive.style.display = 'flex'
     iconHome.style.display = 'none'
@@ -60,8 +63,8 @@ function switchValueMainToQrCode() {
 
 // by click in home btn switch Page To home
 function switchValueMainToOptionAndSlider() {
-    OptionsSectionMain.style.display = 'none'
-    slider.style.display = 'none'
+    // OptionsSectionMain.style.display = 'none'
+    // slider.style.display = 'none'
     mobileQR.style.display = 'none'
     iconHomeActive.style.display = 'none'
     iconHome.style.display = 'flex'
