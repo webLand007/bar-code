@@ -25,13 +25,24 @@ signOut.addEventListener('click', signOutInAccount)
 // show information in form
 document.addEventListener('DOMContentLoaded', loadInformationAccount)
 
-// At the time of entering the loading - page in the local storage, it should be equal to true
 backToPageSetting.addEventListener('click', switchPageToSetting)
-window.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('loading-page', 'true')
-})
+
+
 // Functions
 
+// At the time of close from the loading-page in local storage, it should be equal to false
+window.onbeforeunload = function () {
+    localStorage.setItem('loading-page', 'false')
+}
+
+function switchPageToSetting() {
+    window.location.href = "../setting page/setting.html"
+    localStorage.setItem('loading-page', 'true')
+}
+
+window.addEventListener('beforeunload', function () {
+    localStorage.setItem('loading-page', 'true')
+})
 
 // show information in form
 function loadInformationAccount() {
@@ -229,10 +240,6 @@ function showAndHideInformationPerson(info) {
 function cancelDelet() {
     document.querySelector(".shadow-div").style.display = "none"
 
-}
-
-function switchPageToSetting() {
-    window.location.href = "../setting page/setting.html"
 }
 
 function signOutModal(massage) {

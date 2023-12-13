@@ -9,9 +9,9 @@ let goToInformationPage = document.querySelector('#goToInformationPage')
 
 // events...
 // At the time of entering the loading-page in the local storage, it should be equal to true
-window.addEventListener('DOMContentLoaded', () => {
-    localStorage.setItem('loading-page', 'true')
-})
+// window.addEventListener('DOMContentLoaded', () => {
+//     localStorage.setItem('loading-page', 'true')
+// })
 
 // switch page map to home page
 goToHome.addEventListener('click', switchPageToHome)
@@ -30,15 +30,27 @@ function ShowTheListOfOffers() {
 
 }
 
+// At the time of close from the loading-page in local storage, it should be equal to false
+window.onbeforeunload = function () {
+    localStorage.setItem('loading-page', 'false')
+}
+
+
 // switch page map to home page
 function switchPageToHome() {
     window.location.href = '../index.html'
+    localStorage.setItem('loading-page', 'true')
 }
 
 // switch page map to user-information page
 function switchPageToInformationPage() {
     window.location.href = '../user-information-page/information page.html'
+    localStorage.setItem('loading-page', 'true')
 }
+
+window.addEventListener('beforeunload', function () {
+    localStorage.setItem('loading-page', 'true')
+})
 
 // functions...
 
