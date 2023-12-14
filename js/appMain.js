@@ -10,6 +10,7 @@ let qrCode = document.querySelector('#qrCode')
 let loadingPage = document.querySelector('#loading-page')
 let headerMain = document.querySelector('#headerMain')
 let footerMain = document.querySelector('#footerMain')
+let main = document.querySelector('#main')
 
 
 
@@ -25,12 +26,14 @@ window.onbeforeunload = function () {
     localStorage.setItem('loading-page', 'false')
 }
 
-
-
 // show loading page
 function loading() {
     let info = localStorage.getItem('loading-page')
     info = JSON.parse(info)
+
+    if (info == null) {
+        info = false
+    }
 
     // ahow loading page
     showAndHideLoading(info)
@@ -52,25 +55,22 @@ function switchPageToSetting(e) {
 
 // by click in QR-Code btn switch Page To QR code
 function switchValueMainToQrCode() {
-    // OptionsSectionMain.style.display = 'flex'
-    // slider.style.display = 'flex'
     mobileQR.style.display = 'flex'
     iconHomeActive.style.display = 'flex'
     iconHome.style.display = 'none'
     mobileQRActive.style.display = 'none'
+    main.style.display = 'inline-block'
     qrCode.style.display = 'none'
 }
 
 // by click in home btn switch Page To home
 function switchValueMainToOptionAndSlider() {
-    // OptionsSectionMain.style.display = 'none'
-    // slider.style.display = 'none'
     mobileQR.style.display = 'none'
     iconHomeActive.style.display = 'none'
     iconHome.style.display = 'flex'
     mobileQRActive.style.display = 'flex'
+    main.style.display = 'none'
     qrCode.style.display = 'flex'
-
 }
 
 // show and hide for loading page

@@ -6,6 +6,14 @@
   font-family: iran-sans;
   src: url(../css/BTraffic.ttf);
 }
+@font-face {
+  font-family: VampiroOne-Regular;
+  src: url(../Fonts-B_YasDL.com/VampiroOne-Regular.ttf);
+}
+@font-face {
+  font-family: BArabics;
+  src: url(../Fonts-B_YasDL.com/BArabics.ttf);
+}
 body {
   font-family: iran-sans;
   background-color: #FDFDFD;
@@ -21,6 +29,7 @@ body #headerMain {
   right: 0;
   left: 0;
   background: linear-gradient(180deg, rgba(113, 159, 244, 0.4431372549) 0%, rgba(189, 209, 248, 0.54) 25%, rgba(239, 239, 239, 0) 80%, #FDFDFD 100%);
+  display: none;
 }
 body #headerMain #header-top {
   width: 100%;
@@ -29,10 +38,23 @@ body #headerMain #header-top {
   align-items: center;
   justify-content: space-between;
 }
+body #headerMain #header-top .logo-tit-T {
+  text-shadow: 0px 1px 4px #7C7C7C;
+  color: #FF8C15;
+  font-family: VampiroOne-Regular;
+  -webkit-text-stroke-width: 0.01vh;
+  -webkit-text-stroke-color: #F8F8F8;
+  font-size: 5vh;
+}
+body #headerMain #header-top .logo-tit-Bar {
+  font-family: BArabics;
+  color: #206BF5;
+}
 body #headerMain #header-top span {
   color: #414141;
   font-weight: bold;
   font-size: 3vh;
+  margin: 0;
 }
 body #headerMain #header-top * {
   margin: 0 2vh;
@@ -77,34 +99,33 @@ body #OptionsSectionMain {
   display: flex;
   flex-wrap: wrap;
   padding: 1vh 0;
-  border: 0.2vh solid #FFE2BF;
   background: rgba(255, 205, 145, 0);
-  box-shadow: 0px 0px 11.9px 0px #FFE1BC;
+  box-shadow: 0px 0px 11.9px 0px rgba(255, 205, 145, 0.5);
 }
-body #OptionsSectionMain > div {
-  width: 30%;
-  height: 10vh;
-  margin: 0.3vh;
+body #OptionsSectionMain div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 3% 6.5%;
+  width: 20%;
+  height: 0vh;
 }
-body #OptionsSectionMain > div > div > svg {
-  width: 7vh;
-  height: 7vh;
-}
-body #OptionsSectionMain > div > span {
-  color: #C6C6C6;
-  font-size: 1.5vh;
+body #OptionsSectionMain div > span {
+  color: #42ABD8;
+  font-size: 1.3vh;
   font-weight: bold;
+  text-align: center;
 }
-body #OptionsSectionMain > div img {
-  width: 100%;
+body #OptionsSectionMain div img {
+  width: 70%;
 }
 body #slider {
   width: 90%;
   direction: ltr;
   margin: 2vh auto;
+}
+body #slider .owl-stage-outer {
+  border-radius: 1vh;
 }
 body #slider .item {
   width: 100%;
@@ -144,10 +165,9 @@ body #footerMain {
   left: 0;
   margin: 0 auto;
   z-index: 1;
-  display: flex;
   flex-direction: column;
   background: linear-gradient(0deg, rgba(113, 159, 244, 0.4431372549) 0%, rgba(189, 209, 248, 0.54) 35%, rgba(239, 239, 239, 0) 100%);
-  box-shadow: 0px -5px 8.2px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px -5px 18.2px 0px rgba(0, 0, 0, 0.05);
 }
 body #footerMain #container {
   width: 100%;
@@ -157,8 +177,6 @@ body #footerMain #container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #ECECEC;
-  border-bottom: none;
 }
 body #footerMain #container div {
   margin: 0 4vh;
@@ -177,7 +195,7 @@ body #loading-page {
   background: linear-gradient(163deg, #79A4F5 47.08%, #DCE4F4 138.52%);
   width: 100%;
   height: 100vh;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -201,6 +219,11 @@ body span {
 body .owl-next span,
 body .owl-prev span {
   visibility: hidden;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background: #FF8C15;
 }
 
 /*# sourceMappingURL=styleMain.css.map */
