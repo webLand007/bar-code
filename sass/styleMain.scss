@@ -25,7 +25,7 @@ body {
         top: 0;
         right: 0;
         left: 0;
-        background: linear-gradient(180deg, #719ff471 0%, rgba(189, 209, 248, 0.54) 25%, rgba(239, 239, 239, 0.00) 80%, #FDFDFD 100%);
+        background: linear-gradient(180deg, #719FF4 0%, rgba(189, 209, 248, 0.54) 49.39%, rgba(239, 239, 239, 0.00) 100%);
         display: none;
 
         #header-top {
@@ -37,17 +37,14 @@ body {
             justify-content: space-between;
 
             .logo-tit-T {
-                text-shadow: 0px 1px 4px #7C7C7C;
-                color: #FF8C15;
-                font-family: VampiroOne-Regular;
-                -webkit-text-stroke-width: 0.01vh;
-                -webkit-text-stroke-color: #F8F8F8;
-                font-size: 5vh;
+                margin: 0;
             }
 
             .logo-tit-Bar {
                 font-family: BArabics;
-                color: #206BF5;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(234deg, #206BF5 22.69%, #81ABF9 88.24%);
             }
 
             span {
@@ -217,7 +214,7 @@ body {
         margin: 0 auto;
         z-index: 1;
         flex-direction: column;
-        background: linear-gradient(0deg, #719ff471 0%, rgba(189, 209, 248, 0.54) 35%, rgba(239, 239, 239, 0.00) 100%);
+        background: linear-gradient(0deg, #81A7EE 0%, rgba(189, 209, 248, 0.54) 49.39%, rgba(239, 239, 239, 0.00) 100%);
         box-shadow: 0px -5px 18.2px 0px rgba(0, 0, 0, 0.05);
 
 
