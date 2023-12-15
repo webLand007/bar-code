@@ -11,6 +11,9 @@ let loadingPage = document.querySelector('#loading-page')
 let headerMain = document.querySelector('#headerMain')
 let footerMain = document.querySelector('#footerMain')
 let main = document.querySelector('#main')
+let lineHome = document.querySelector('.line-home')
+let lineQRCode = document.querySelector('.line-QR-code')
+let logoTitT = document.querySelector('.logo-tit-T')
 
 
 
@@ -61,6 +64,9 @@ function switchValueMainToQrCode() {
     mobileQRActive.style.display = 'none'
     main.style.display = 'inline-block'
     qrCode.style.display = 'none'
+    lineHome.classList.add('line-home-A')
+    lineQRCode.classList.remove('line-QR-code-A')
+    console.log('QR');
 }
 
 // by click in home btn switch Page To home
@@ -71,6 +77,9 @@ function switchValueMainToOptionAndSlider() {
     mobileQRActive.style.display = 'flex'
     main.style.display = 'none'
     qrCode.style.display = 'flex'
+    lineQRCode.classList.add('line-QR-code-A')
+    lineHome.classList.remove('line-home-A')
+    console.log('MAIN');
 }
 
 // show and hide for loading page
@@ -120,4 +129,14 @@ function nextSlide() {
     setInterval(() => {
         owlPrev.click()
     }, 4000);
+
+    // Run the header logo animation (T)
+    // Run the header logo animation
+    // Every 6 seconds
+    setInterval(() => {
+        logoTitT.classList.add('animate__swing')
+        setTimeout(() => {
+            logoTitT.classList.remove('animate__swing')
+        }, 2000);
+    }, 6000);
 }

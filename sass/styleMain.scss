@@ -93,8 +93,25 @@ body {
 
             #icon-home-active,
             #mobile-QR-active {
-                border-bottom: 0.3vh solid #707070;
                 padding: 1vh 0;
+            }
+
+            .line-QR-code,
+            .line-home {
+                width: 0%;
+                margin: 0;
+                height: 0.2vh;
+                transition: width 0.4s;
+                opacity: 0;
+                visibility: hidden;
+                background: #707070;
+            }
+
+            .line-QR-code-A,
+            .line-home-A {
+                width: 100%;
+                opacity: 1;
+                visibility: visible;
             }
         }
 
@@ -102,6 +119,7 @@ body {
 
     #main {
         width: 100%;
+        transition-duration: 3s;
     }
 
     #OptionsSectionMain {
@@ -185,6 +203,7 @@ body {
         img {
             width: 70%;
             margin: 0 auto;
+            opacity: 70%;
         }
     }
 

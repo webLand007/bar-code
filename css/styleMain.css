@@ -85,11 +85,27 @@ body #headerMain #header-main #mobile-QR-active {
 }
 body #headerMain #header-main #icon-home-active,
 body #headerMain #header-main #mobile-QR-active {
-  border-bottom: 0.3vh solid #707070;
   padding: 1vh 0;
+}
+body #headerMain #header-main .line-QR-code,
+body #headerMain #header-main .line-home {
+  width: 0%;
+  margin: 0;
+  height: 0.2vh;
+  transition: width 0.4s;
+  opacity: 0;
+  visibility: hidden;
+  background: #707070;
+}
+body #headerMain #header-main .line-QR-code-A,
+body #headerMain #header-main .line-home-A {
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
 }
 body #main {
   width: 100%;
+  transition-duration: 3s;
 }
 body #OptionsSectionMain {
   width: 90%;
@@ -155,6 +171,7 @@ body #qrCode h3 {
 body #qrCode img {
   width: 70%;
   margin: 0 auto;
+  opacity: 70%;
 }
 body #footerMain {
   width: 100%;
