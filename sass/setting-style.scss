@@ -14,12 +14,17 @@ body {
 
             h3 {
                 font-weight: 700;
+                margin-right: -2vh;
             }
 
             div {
                 float: right;
                 border-bottom: none;
             }
+        }
+
+        #backToPageMain {
+            margin-left: 2vh;
         }
     }
 
