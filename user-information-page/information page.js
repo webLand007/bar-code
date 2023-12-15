@@ -158,49 +158,55 @@ function loadOfLS() {
  * @param {*} e 
  */
 function signOutInAccount(e) {
-    // if inputs be empty then show this modal
-    if (!phonNumber.value && !fullName.value) {
-        Swal.fire({
-            text: "شما حساب فعال ندارید",
-            showClass: {
-                popup: `
-                animate__animated
-                animate__fadeInUp
-                animate__faster
-              `
-            },
-            hideClass: {
-                popup: `
-                animate__animated
-                animate__fadeOutDown
-                animate__faster
-              `
-            }
-        });
-    } else {
-        // when user want to sign out from application active this modal
-        const delteModal = Swal.fire({
-            title: "ایا می خواهید خارج شوید؟",
-            showCancelButton: true,
-            confirmButtonColor: "rgba(49, 201, 82, 0.07)",
-            cancelButtonColor: "rgba(241, 61, 61, 0.05)",
-            confirmButtonText: "خیر",
-            cancelButtonText: "بله",
-
-        }).then((result) => {
-            if (result.dismiss == "cancel") {
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "با موفقیعت خارج شدید",
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                removeInformation();
-            }
-        });
-
+    // load in local storage
+    let user = loadOfLS()
+    // for loop in user varible(local storage)
+    for (const iterator in user) {
+        // if local storage be empty
+        if (user[iterator] == undefined || user[iterator] == null) {
+            Swal.fire({
+                text: "شما حساب فعال ندارید",
+                showClass: {
+                    popup: `
+                    animate__animated
+                    animate__fadeInUp
+                    animate__faster
+                  `
+                },
+                hideClass: {
+                    popup: `
+                    animate__animated
+                    animate__fadeOutDown
+                    animate__faster
+                  `
+                }
+            });
+        } else {
+            // when user want to sign out from application active this modal
+            const delteModal = Swal.fire({
+                title: "ایا می خواهید خارج شوید؟",
+                showCancelButton: true,
+                confirmButtonColor: "rgba(49, 201, 82, 0.07)",
+                cancelButtonColor: "rgba(241, 61, 61, 0.05)",
+                confirmButtonText: "خیر",
+                cancelButtonText: "بله",
+                // if user clicks on yes then active this moidal
+            }).then((result) => {
+                if (result.dismiss == "cancel") {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "با موفقیعت خارج شدید",
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    removeInformation();
+                }
+            });
+        }
     }
+
+
 
 }
 // When logging out of the user account
