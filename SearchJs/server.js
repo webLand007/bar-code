@@ -627,7 +627,7 @@ let greenIcon = new L.Icon({
     shadowSize: [41, 41]
 });
 
-var redIcon = new L.Icon({
+let redIcon = new L.Icon({
     iconUrl: 'icon/marker-icon-2x-red.png',
     shadowUrl: 'icon/shadow/marker-shadow.png',
     iconSize: [25, 41],
@@ -645,13 +645,18 @@ function addMarkerOnMap(e) {
     marker.addTo(myMap);
     // set marker on user clicked
     marker.setLatLng(e.latlng);
-    //marker.bindPopup(`lat : ${e.latlng.lat} - lng : ${e.latlng.lng}`) //.openPopup();
+    // marker.bindPopup(`lat : ${e.latlng.lat} - lng : ${e.latlng.lng}`).openPopup();
     // change latitude and longitude in varibles
     centerLat = e.latlng.lat;
     centerLng = e.latlng.lng;
     document.querySelector('#resualt').style.display = 'none'
     document.querySelector('#searchBox').style.height = '6vh'
     document.querySelector('#inputSearch').style = ' margin-bottom:0;'
+    // remove extra markers from the map
+    console.log(searchMarkers);
+    searchMarkers.forEach(item => {
+        item.remove(greenIcon)
+    })
 }
 
 let searchMarkers = [];
@@ -698,7 +703,6 @@ function search() {
             document.querySelector('#searchBox').style.marginBottom = '1.5vh'
 
             //set center of map to marker location
-            console.log(data.data.count);
             myMap.setZoom(13)
 
             //for every search resualt add marker
@@ -709,6 +713,20 @@ function search() {
                     icon: greenIcon,
                     title: info.title
                 }).addTo(myMap);
+                searchMarkers[i].on('click', function (e) {
+
+                    searchMarkers.forEach(item => {
+                        item.remove()
+                    })
+
+
+                    e.target = L.marker([info.location.y, info.location.x], {
+                        icon: redIcon,
+                        title: info.title
+                    }).addTo(myMap);
+                    // remove extra markers (greenn  markers)
+                    myMap.flyTo([info.location.y, info.location.x], 16);
+                })
                 makeDiveResualt(data.data.items[i], i);
             }
 
@@ -728,7 +746,6 @@ function search() {
  * @param {number} index - each div of user target address has number(number are index of array)
  */
 function makeDiveResualt(data, index) {
-    console.log(data.title)
     const resultsDiv = document.getElementById("resualt");
     const resultDiv = document.createElement("div");
     // active function when user click on one address
@@ -747,7 +764,6 @@ function makeDiveResualt(data, index) {
             }
             // remove extra markers (greenn  markers)
             searchMarkers[i].remove(greenIcon);
-
         }
         // Hide list of suggestions
         document.querySelector('#resualt').style.display = 'none'
