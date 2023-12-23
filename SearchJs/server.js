@@ -1,13 +1,13 @@
-// variables...
+// ...variables...
 
 // input search in map
-var term = document.querySelector("#term")
+const term = document.querySelector("#term")
 // icon user in header
-let goToHome = document.querySelector('#goToHome')
+const goToHome = document.querySelector('#goToHome')
 // icon home in header
-let goToInformationPage = document.querySelector('#goToInformationPage')
+const goToInformationPage = document.querySelector('#goToInformationPage')
 
-// events...
+// ...events...
 // At the time of entering the loading-page in the local storage, it should be equal to true
 // window.addEventListener('DOMContentLoaded', () => {
 //     localStorage.setItem('loading-page', 'true')
@@ -20,41 +20,53 @@ goToInformationPage.addEventListener('click', switchPageToInformationPage)
 // click by input search in map
 term.onclick = ShowTheListOfOffers
 
-// show list offers by click input search 
+/**
+ * show list offers by click input search 
+ */
 function ShowTheListOfOffers() {
     /**
      * if value of search box be 0 so resulte div will be none but if value of search box is note 0 then search function will be called.
      * Search function call to display the marks on the map and zoom out.
      */
     term.value == 0 ? document.querySelector('#resualt').style.display = 'none' : search()
-
 }
 
-// At the time of close from the loading-page in local storage, it should be equal to false
+/**
+ * At the time of close from the loading-page in local storage, it should be equal to false
+ */
 window.onbeforeunload = function () {
     localStorage.setItem('loading-page', 'false')
 }
 
 
-// switch page map to home page
+/**
+ * switch page map to home page
+ */
 function switchPageToHome() {
     window.location.href = '../index.html'
     localStorage.setItem('loading-page', 'true')
 }
 
-// switch page map to user-information page
+/**
+ * switch page map to user-information page
+ */
 function switchPageToInformationPage() {
     window.location.href = '../user-information-page/information page.html'
     localStorage.setItem('loading-page', 'true')
 }
 
-window.addEventListener('beforeunload', function () {
+/**
+ * At the time of close from the loading-page in local storage, it should be equal to false
+ */
+window.addEventListener('beforeunload', () => {
     localStorage.setItem('loading-page', 'true')
 })
 
-// functions...
+// ...functions...
 
-//init the map
+/**
+ * map: load the map from neshan api server=> it's object that you are able to change style of map, You need apiky to active map, You can change type of map and etc...
+ */
 let myMap = new L.Map('map', {
     key: 'web.a1d0cdd60e584c12841a7c226540a7f7',
     maptype: 'dreamy',
@@ -64,9 +76,12 @@ let myMap = new L.Map('map', {
     zoom: 14,
 });
 
+//on map binding
+myMap.on('click', addMarkerOnMap);
 
-
-// location of Shiraz cargo terminal => show it with marker
+/**
+ * location of Shiraz cargo terminal => show it with marker
+ */
 const LeafIcon = L.Icon.extend({
     options: {
         iconSize: [20, 30],
@@ -76,7 +91,10 @@ const LeafIcon = L.Icon.extend({
         popupAnchor: [0, -50]
     }
 });
-// choose icons
+
+/**
+ * create icons
+ */
 let tIcon = new LeafIcon({
     color: 'blue',
     fillColor: 'blue',
@@ -84,7 +102,7 @@ let tIcon = new LeafIcon({
     radius: 25
     // shadowUrl: 'http://leafletjs.com/examples/custom-icons/leaf-shadow.png'
 })
-// tIcons...
+// push tIcons to this array
 let customMarkers = []
 // location of icon + Popup
 customMarkers.push(L.circle([29.601881, 52.525726], {
@@ -567,15 +585,19 @@ customMarkers.push(L.circle([29.620349, 52.540514], {
     icon: tIcon
 })) //.bindPopup("حدفاصل کوچہ ٢ تا درب ورودی مجتمع رضا روپروی میوە مار کت رود کی")
 
-// add markers to map
+/**
+ * add markers to map
+ */
 customMarkers.forEach(item => {
     item.addTo(myMap)
 })
 
-// condition for zoom out + zoom in
+/**
+ * condition for tIcons: if user zoom out on map then icons will be remove from map, and if user zoom in on map then icons will add to map
+ */
 myMap.on("zoom", () => {
+    // remove icons if zoom is less than 12 || zoom is be 12
     if (myMap.getZoom() <= 12) {
-        // remove icons if zoom is less than 12 || zoom is be 12
         customMarkers.forEach(item => {
             myMap.removeLayer(item)
         })
@@ -593,12 +615,14 @@ let marker = L.marker([29.606446174640958, 52.53792787943611])
 let centerLat = " 29.606446174640958";
 let centerLng = " 52.53792787943611";
 
-// get and show user location
+/**
+ * find user location and mark it on the map
+ */
 function whereAmI() {
-    // if user Devise suports geo location
+    // if user Device suports geo location
     const successCallback = (position) => {
         // set marker position
-        marker.setLatLng([position.coords.latitude, position.coords.longitude]).addTo(myMap);;
+        marker.setLatLng([position.coords.latitude, position.coords.longitude]).addTo(myMap);
         // change value of location
         centerLat = position.coords.latitude, position;
         centerLng = position.coords.longitude;
@@ -607,7 +631,7 @@ function whereAmI() {
         // change map position
         myMap.flyTo([centerLat, centerLng], 12);
     };
-    // if user Devise doesn't suports geo location
+    // if user Device doesn't suports geo location
     const errorCallback = (error) => {
         alert(error.message)
     };
@@ -615,9 +639,8 @@ function whereAmI() {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 }
 
-//on map binding
-myMap.on('click', addMarkerOnMap);
 
+// create green icon: when user seach on the map we will use green icon
 let greenIcon = new L.Icon({
     iconUrl: `icon/marker-icon-2x-green.png`,
     shadowUrl: 'icon/shadow/marker-shadow.png',
@@ -626,7 +649,7 @@ let greenIcon = new L.Icon({
     popupAnchor: [1, -34],
     shadowSize: [41, 41]
 });
-
+// create red icon: when user seach on the map then choose then address we will use the red icon
 let redIcon = new L.Icon({
     iconUrl: 'icon/marker-icon-2x-red.png',
     shadowUrl: 'icon/shadow/marker-shadow.png',
@@ -638,8 +661,9 @@ let redIcon = new L.Icon({
 
 
 /**
+ * when user cleck on the map: 01=> add marker on the user target location on map. 02=> change style of search box. 03=> remove all markers on the map and add marker on the user target location on the map.
  * 
- * @param {*} e - defualt param for find user location
+ * @param {object} e - defualt param for find user location
  */
 function addMarkerOnMap(e) {
     marker.addTo(myMap);
@@ -649,15 +673,34 @@ function addMarkerOnMap(e) {
     // change latitude and longitude in varibles
     centerLat = e.latlng.lat;
     centerLng = e.latlng.lng;
-    document.querySelector('#resualt').style.display = 'none'
-    document.querySelector('#searchBox').style.height = '6vh'
-    document.querySelector('#inputSearch').style = ' margin-bottom:0;'
+
+    // change style of search box
+    closeSearchBoxStyle()
     // remove extra markers from the map
     console.log(searchMarkers);
     searchMarkers.forEach(item => {
         item.remove(greenIcon)
     })
 }
+
+/**
+ * change style of search box => for close search box
+ */
+function closeSearchBoxStyle() {
+    document.querySelector('#resualt').style.display = 'none'
+    document.querySelector('#searchBox').style.height = '6vh'
+    document.querySelector('#inputSearch').style = ' margin-bottom:0;'
+}
+
+/**
+ * change style of search box => for open search box
+ */
+function openSearchBoxStyle() {
+    document.querySelector('#resualt').style.display = 'flex'
+    document.querySelector('#searchBox').style.height = '30vh'
+    document.querySelector('#inputSearch').style = ' margin-bottom: 1.5vh;'
+}
+
 
 let searchMarkers = [];
 
@@ -689,16 +732,7 @@ function search() {
 
             // If a city is not found in the search
             // (cheange the style search box in footer)
-            if (data.data.count != 0) {
-                document.querySelector('#resualt').style.display = 'flex'
-                document.querySelector('#searchBox').style.height = '30vh'
-                document.querySelector('#inputSearch').style = ' margin-bottom: 1.5vh;'
-            } else {
-                document.querySelector('#resualt').style.display = 'none'
-                document.querySelector('#searchBox').style.height = '6vh'
-                document.querySelector('#inputSearch').style = ' margin-bottom:0;'
-            }
-
+            const sBox = data.data.count != 0 ? openSearchBoxStyle() : closeSearchBoxStyle();
 
             document.querySelector('#searchBox').style.marginBottom = '1.5vh'
 
@@ -738,7 +772,6 @@ function search() {
         });
 
 }
-
 /**
  * get address by user search and add green markers to each address and then when user click on target address add red marker(this marker is the user target address) and then remove all extra green markers
  * 
