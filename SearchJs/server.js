@@ -677,7 +677,6 @@ function addMarkerOnMap(e) {
     // change style of search box
     closeSearchBoxStyle()
     // remove extra markers from the map
-    console.log(searchMarkers);
     searchMarkers.forEach(item => {
         item.remove(greenIcon)
     })
@@ -701,10 +700,35 @@ function openSearchBoxStyle() {
     document.querySelector('#inputSearch').style = ' margin-bottom: 1.5vh;'
 }
 
+/**
+ * create green marker on the map: add the marker each location that server responded
+ * @param {object} info - response from server: address that user searched
+ * @param {Array} searchMarkers - array of addresses that user searched: push all of them to array
+ * @param {number} item - The number of turns of the loop
+ */
+function createGicon(info, searchMarkers, item) {
+    searchMarkers[item] = L.marker([info.location.y, info.location.x], {
+        icon: greenIcon,
+        title: info.title
+    }).addTo(myMap);
+}
+
+/**
+ * when user choose address in the address list => add red icon on the map where user choosed
+ * @param {object} userTarget - object that for find user target click on the map
+ * @param {object} info - response from server: address that user searched 
+ */
+function createRicon(userTarget, info) {
+    userTarget.target = L.marker([info.location.y, info.location.x], {
+        icon: redIcon,
+        title: info.title
+    }).addTo(myMap);
+}
 
 let searchMarkers = [];
-
-//sending request to Search API
+/**
+ * sending request to Search API => ans active all progress(user choose location)
+ */
 function search() {
     // restarting the markers
     for (let j = 0; j < searchMarkers.length; j++) {
@@ -743,21 +767,18 @@ function search() {
             let i;
             for (i = 0; i < data.data.count; i++) {
                 let info = data.data.items[i];
-                searchMarkers[i] = L.marker([info.location.y, info.location.x], {
-                    icon: greenIcon,
-                    title: info.title
-                }).addTo(myMap);
+                // create green marker on the map
+                createGicon(info, searchMarkers, i)
+                // when user choose the address in the list
                 searchMarkers[i].on('click', function (e) {
-
+                    // add red icon when user choose address
+                    createRicon(e, info)
+                    // remove all merkers
                     searchMarkers.forEach(item => {
                         item.remove()
                     })
 
 
-                    e.target = L.marker([info.location.y, info.location.x], {
-                        icon: redIcon,
-                        title: info.title
-                    }).addTo(myMap);
                     // remove extra markers (greenn  markers)
                     myMap.flyTo([info.location.y, info.location.x], 16);
                 })
@@ -770,7 +791,6 @@ function search() {
             document.querySelector('#searchBox').style.height = '6vh'
             console.log(error);
         });
-
 }
 /**
  * get address by user search and add green markers to each address and then when user click on target address add red marker(this marker is the user target address) and then remove all extra green markers
@@ -799,9 +819,7 @@ function makeDiveResualt(data, index) {
             searchMarkers[i].remove(greenIcon);
         }
         // Hide list of suggestions
-        document.querySelector('#resualt').style.display = 'none'
-        document.querySelector('#searchBox').style.height = '6vh'
-        document.querySelector('#inputSearch').style = ' margin-bottom:0;'
+        closeSearchBoxStyle()
     }
     resultDiv.dir = "ltr";
     let location = document.createElement("pre");
